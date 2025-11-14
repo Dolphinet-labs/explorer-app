@@ -9,7 +9,6 @@ import LatestZkEvmL2Batches from 'ui/home/latestBatches/LatestZkEvmL2Batches';
 import LatestBlocks from 'ui/home/LatestBlocks';
 import Stats from 'ui/home/Stats';
 import Transactions from 'ui/home/Transactions';
-import AdBanner from 'ui/shared/ad/AdBanner';
 
 const rollupFeature = config.features.rollup;
 
@@ -31,14 +30,27 @@ const Home = () => {
   return (
     <Box as="main">
       <HeroBanner/>
-      <Flex flexDir={{ base: 'column', lg: 'row' }} columnGap={ 2 } rowGap={ 1 } mt={ 3 } _empty={{ mt: 0 }}>
+      <Flex
+        flexDir={{ base: 'column', lg: 'row' }}
+        columnGap={{ base: 2, lg: 4 }}
+        rowGap={{ base: 3, lg: 0 }}
+        mt={{ base: 4, lg: 6 }}
+        _empty={{ mt: 0 }}
+      >
         <Stats/>
         <ChainIndicators/>
       </Flex>
-      <AdBanner mt={ 6 } mx="auto" display={{ base: 'flex', lg: 'none' }} justifyContent="center"/>
-      <Flex mt={ 8 } direction={{ base: 'column', lg: 'row' }} columnGap={ 12 } rowGap={ 6 }>
-        { leftWidget }
-        <Box flexGrow={ 1 }>
+      <Flex
+        mt={{ base: 6, lg: 8 }}
+        direction={{ base: 'column', lg: 'row' }}
+        columnGap={{ base: 0, lg: 8 }}
+        rowGap={{ base: 6, lg: 0 }}
+        alignItems="flex-start"
+      >
+        <Box flex={{ base: '1', lg: '0 0 400px' }}>
+          { leftWidget }
+        </Box>
+        <Box flexGrow={ 1 } minW={ 0 }>
           <Transactions/>
         </Box>
       </Flex>

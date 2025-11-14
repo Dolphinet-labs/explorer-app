@@ -5,7 +5,6 @@ import { useInView } from 'react-intersection-observer';
 import config from 'configs/app';
 import { useScrollDirection } from 'lib/contexts/scrollDirection';
 import RewardsButton from 'ui/rewards/RewardsButton';
-import NetworkLogo from 'ui/snippets/networkMenu/NetworkLogo';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileMobile from 'ui/snippets/user/profile/UserProfileMobile';
 import UserWalletMobile from 'ui/snippets/user/wallet/UserWalletMobile';
@@ -33,12 +32,12 @@ const HeaderMobile = ({ hideSearchBar, renderSearchBar }: Props) => {
       left={ 0 }
       zIndex="sticky2"
       pt="1px"
-      height="56px"
+      minH="auto"
     >
       <Flex
         as="header"
         paddingX={ 3 }
-        paddingY={ 2 }
+        paddingY={ 0 }
         bgColor={{ _light: 'white', _dark: 'black' }}
         width="100%"
         alignItems="center"
@@ -47,8 +46,7 @@ const HeaderMobile = ({ hideSearchBar, renderSearchBar }: Props) => {
         boxShadow={ !inView && scrollDirection === 'down' ? 'md' : 'none' }
       >
         <Burger/>
-        <NetworkLogo ml={ 2 } mr="auto"/>
-        <Flex columnGap={ 2 }>
+        <Flex columnGap={ 2 } ml="auto">
           { config.features.rewards.isEnabled && <RewardsButton/> }
           {
             (config.features.account.isEnabled && <UserProfileMobile/>) ||

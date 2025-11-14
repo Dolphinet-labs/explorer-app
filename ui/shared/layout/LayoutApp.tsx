@@ -8,7 +8,7 @@ import HeaderMobile from 'ui/snippets/header/HeaderMobile';
 import * as Layout from './components';
 
 const TOP_BAR_HEIGHT = 36;
-const HEADER_HEIGHT_MOBILE = 56;
+const HEADER_HEIGHT_MOBILE = 48;
 
 const LayoutDefault = ({ children }: Props) => {
   return (

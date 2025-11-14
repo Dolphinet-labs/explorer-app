@@ -33,6 +33,11 @@ export const getExternalAssetFilePath = (envName: string) => {
     return;
   }
 
+  // If the value is already a relative path (starts with /), return it as-is
+  if (parsedValue.startsWith('/')) {
+    return parsedValue;
+  }
+
   return buildExternalAssetFilePath(envName, parsedValue);
 };
 

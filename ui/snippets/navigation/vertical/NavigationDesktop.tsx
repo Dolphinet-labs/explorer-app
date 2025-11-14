@@ -4,7 +4,7 @@ import React from 'react';
 import { useAppContext } from 'lib/contexts/app';
 import * as cookies from 'lib/cookies';
 import useNavItems, { isGroupItem } from 'lib/hooks/useNavItems';
-import IconSvg from 'ui/shared/IconSvg';
+import IconSvg, { type IconName } from 'ui/shared/IconSvg';
 import useIsAuth from 'ui/snippets/auth/useIsAuth';
 import NetworkLogo from 'ui/snippets/networkMenu/NetworkLogo';
 
@@ -56,15 +56,15 @@ const NavigationDesktop = () => {
       borderRight="1px solid"
       borderColor="border.divider"
       px={{ lg: isExpanded ? 6 : 4, xl: isCollapsed ? 4 : 6 }}
-      py={ 12 }
+      py={ 0 }
       width={{ lg: isExpanded ? '229px' : '92px', xl: isCollapsed ? '92px' : '229px' }}
       onClick={ handleContainerClick }
       transitionProperty="width, padding"
       transitionDuration="normal"
       transitionTimingFunction="ease"
     >
-      <TestnetBadge position="absolute" pl={ 3 } w="49px" top="34px"/>
-      <RollupStageBadge position="absolute" ml={{ lg: isExpanded ? 3 : '10px', xl: isCollapsed ? '10px' : 3 }} top="34px"/>
+      <TestnetBadge position="absolute" pl={ 3 } w="49px" top="16px"/>
+      <RollupStageBadge position="absolute" ml={{ lg: isExpanded ? 3 : '10px', xl: isCollapsed ? '10px' : 3 }} top="16px"/>
       <Box
         as="header"
         display="flex"
@@ -74,14 +74,14 @@ const NavigationDesktop = () => {
         w="100%"
         pl={{ lg: isExpanded ? 3 : '15px', xl: isCollapsed ? '15px' : 3 }}
         pr={{ lg: isExpanded ? 0 : '15px', xl: isCollapsed ? '15px' : 0 }}
-        h={ 10 }
+        h={ 32 }
         transitionProperty="padding"
         transitionDuration="normal"
         transitionTimingFunction="ease"
       >
         <NetworkLogo isCollapsed={ isCollapsed }/>
       </Box>
-      <Box as="nav" mt={ 6 } w="100%">
+      <Box as="nav" mt={ 1 } w="100%">
         <VStack as="ul" gap="1" alignItems="flex-start">
           { mainNavItems.map((item) => {
             if (isGroupItem(item)) {
@@ -101,26 +101,30 @@ const NavigationDesktop = () => {
         </Box>
       ) }
       <IconSvg
-        name="arrows/east-mini"
-        width={ 6 }
-        height={ 6 }
-        _hover={{ color: 'link.primary.hover' }}
-        borderRadius="base"
+        name={ 'arrows/east-mini' as IconName }
+        boxSize="24px"
+        p={ 1.2 }
+        _hover={{
+          color: 'link.primary.hover',
+          bgColor: { base: 'gray.50', _dark: 'gray.800' },
+        }}
+        borderRadius="md"
         bgColor={{ base: 'white', _dark: 'black' }}
-        color={{ base: 'blackAlpha.400', _dark: 'whiteAlpha.400' }}
+        color={{ base: 'gray.600', _dark: 'gray.400' }}
         borderWidth="1px"
         borderColor="border.divider"
+        boxShadow="sm"
         transform={{ lg: isExpanded ? 'rotate(0)' : 'rotate(180deg)', xl: isCollapsed ? 'rotate(180deg)' : 'rotate(0)' }}
         transformOrigin="center"
         position="absolute"
-        top="104px"
+        top="140px"
         left={{ lg: isExpanded ? '216px' : '80px', xl: isCollapsed ? '80px' : '216px' }}
         cursor="pointer"
         onClick={ handleTogglerClick }
         aria-label="Expand/Collapse menu"
         display="none"
         _groupHover={{ display: 'block' }}
-        transitionProperty="transform, left"
+        transitionProperty="transform, left, background-color, color"
         transitionDuration="normal"
         transitionTimingFunction="ease"
       />

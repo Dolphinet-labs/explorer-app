@@ -17,10 +17,13 @@ export interface Props extends HTMLChakraProps<'div'> {
 
 const IconSvg = React.forwardRef(
   function IconSvg({ name, isLoading = false, ...props }: Props, ref: React.ForwardedRef<HTMLDivElement>) {
+    // Convert icon name with slashes to sprite ID format (remove slashes)
+    // e.g., "arrows/east-mini" -> "arrowseast-mini"
+    const spriteId = name.replace(/\//g, '');
     return (
       <Skeleton loading={ isLoading } display="inline-block" asChild { ...props } ref={ ref }>
         <chakra.svg w="100%" h="100%">
-          <use href={ `${ href }#${ name }` }/>
+          <use href={ `${ href }#${ spriteId }` }/>
         </chakra.svg>
       </Skeleton>
     );

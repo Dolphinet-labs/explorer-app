@@ -1,15 +1,20 @@
 import type { LinkProps as ChakraLinkProps } from '@chakra-ui/react';
-import { Link as ChakraLink, LinkBox as ChakraLinkBox, LinkOverlay as ChakraLinkOverlay, Icon } from '@chakra-ui/react';
+import { Link as ChakraLink, LinkBox as ChakraLinkBox, LinkOverlay as ChakraLinkOverlay, chakra } from '@chakra-ui/react';
 import NextLink from 'next/link';
 import type { LinkProps as NextLinkProps } from 'next/link';
 import React from 'react';
 
-import ArrowIcon from 'icons/link_external.svg';
-
 import { Skeleton } from './skeleton';
 
+// Use inline SVG instead of importing the file
+// This avoids SSR issues with @svgr/webpack
+const LinkExternalIconSVG = chakra('svg');
+
 export const LinkExternalIcon = ({ color }: { color?: ChakraLinkProps['color'] }) => (
-  <Icon
+  <LinkExternalIconSVG
+    viewBox="0 0 12 12"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
     boxSize={ 3 }
     verticalAlign="middle"
     color={ color ?? 'icon.externalLink' }
@@ -17,9 +22,13 @@ export const LinkExternalIcon = ({ color }: { color?: ChakraLinkProps['color'] }
       color: 'inherit',
     }}
     flexShrink={ 0 }
+    display="inline-block"
   >
-    <ArrowIcon/>
-  </Icon>
+    <path
+      d="M10.621 4.353 5.176 9.798a.69.69 0 1 1-.974-.974l5.444-5.446H5.108a.69.69 0 0 1 0-1.378H12v6.892a.69.69 0 1 1-1.379 0V4.353Z"
+      fill="currentColor"
+    />
+  </LinkExternalIconSVG>
 );
 
 interface LinkPropsChakra extends ChakraLinkProps {
