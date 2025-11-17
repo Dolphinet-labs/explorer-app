@@ -19,7 +19,8 @@ const MainArea = ({ children, className }: Props) => {
       className={ className }
       w="100%"
       maxW={ `${ CONTENT_MAX_WIDTH }px` }
-      m="0 auto"
+      m={{ base: 0, lg: '0 0 0 0' }}
+      ml={ 0 }
       minH={{
         base: `calc(100vh - ${ TOP_BAR_HEIGHT }px)`,
         lg: `calc(100vh - ${ TOP_BAR_HEIGHT + HORIZONTAL_NAV_BAR_HEIGHT }px)`,

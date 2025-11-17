@@ -10,7 +10,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.4-blue)](https://www.typescriptlang.org/)
 [![Chakra UI](https://img.shields.io/badge/Chakra%20UI-3.15-319795)](https://chakra-ui.com/)
 
-基于 [Blockscout](https://github.com/blockscout/blockscout) 构建的区块链浏览器前端，专为 Dolphinet 网络定制优化。
+区块链浏览器前端，专为 Dolphinet 网络定制优化。
 
 [功能特性](#-功能特性) • [快速开始](#-快速开始) • [配置说明](#-配置说明) • [开发指南](#-开发指南) • [贡献](#-贡献)
 
@@ -48,6 +48,7 @@
 - **实时更新** - WebSocket 实时同步最新区块和交易数据
 - **高级搜索** - 支持地址、交易哈希、区块号等多种搜索方式
 - **数据导出** - 支持 CSV 格式导出交易和地址数据
+- **简洁界面** - 优化的布局设计，移除不必要的 UI 元素，提供更专注的浏览体验
 
 ### 🛠️ 开发者功能
 - **GraphQL API** - 完整的 GraphQL API 文档和交互式查询界面
@@ -158,17 +159,38 @@ NEXT_PUBLIC_NETWORK_CURRENCY_NAME=Ether
 
 4. **启动开发服务器**
 
+**Windows 用户：**
+
+使用 PowerShell 运行启动脚本（推荐）：
+
+```powershell
+.\start-dev.ps1
+```
+
+或者使用 Yarn：
+
+```bash
+yarn dev
+```
+
+**Linux/macOS 用户：**
+
 ```bash
 yarn dev
 # 或
 npm run dev
 ```
 
-应用将在 `http://localhost:3000` 启动。
+应用将在 `http://localhost:3000` 启动（Windows 上默认使用端口 3002）。
+
+> **注意：** Windows 用户如果遇到 Node.js 版本检查问题，启动脚本会自动使用 `--ignore-engines` 标志。
 
 #### 其他有用的命令
 
 ```bash
+# 构建 SVG 图标精灵
+yarn svg:build-sprite
+
 # 构建生产版本
 yarn build
 
@@ -187,6 +209,13 @@ yarn test:jest
 # 运行 Playwright 测试
 yarn test:pw
 ```
+
+#### Windows 开发注意事项
+
+- 使用 `start-dev.ps1` 脚本可以自动处理开发环境配置
+- 脚本会自动构建 SVG 图标精灵并设置必要的环境变量
+- 如果遇到端口占用问题，可以修改脚本中的端口号
+- 开发模式下会自动启用 CSP `unsafe-eval` 以支持 React Fast Refresh
 
 ## ⚙️ 配置说明
 
@@ -337,7 +366,7 @@ yarn test:jest:watch
 本项目采用 [GNU General Public License v3.0](LICENSE) 许可证。
 
 ```
-Copyright (C) 2024 Dolphinet Labs
+Copyright (C) 2025 Dolphinet Labs
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -357,10 +386,6 @@ GNU General Public License for more details.
 - [贡献指南](./docs/CONTRIBUTING.md) - 如何参与项目贡献
 - [自定义构建](./docs/CUSTOM_BUILD.md) - 如何构建自定义 Docker 镜像
 
-### 相关项目
-- [Blockscout Backend](https://github.com/blockscout/blockscout) - 区块链浏览器后端
-- [Blockscout Frontend](https://github.com/blockscout/frontend) - 原始前端项目
-
 ### 社区
 - [提交 Issue](https://github.com/dolphinnet-labs/explorer-app/issues) - 报告问题或提出建议
 - [讨论区](https://github.com/dolphinnet-labs/explorer-app/discussions) - 参与项目讨论
@@ -369,7 +394,7 @@ GNU General Public License for more details.
 
 <div align="center">
 
-**由 [Dolphinet Labs](https://github.com/dolphinnet-labs) 使用 ❤️ 构建**
+**由 [Dolphinet Labs](https://github.com/dolphinnet-labs) 构建**
 
 [⬆ 回到顶部](#-dolphinet-blockchain-explorer)
 

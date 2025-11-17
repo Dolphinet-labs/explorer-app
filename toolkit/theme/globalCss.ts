@@ -24,6 +24,8 @@ const globalCss: SystemConfig['globalCss'] = {
     WebkitTapHighlightColor: 'transparent',
     fontVariantLigatures: 'no-contextual',
     focusRingStyle: 'hidden',
+    // iOS Safari optimizations
+    WebkitTouchCallout: 'none',
   },
   mark: {
     bg: 'global.mark.bg',
@@ -32,6 +34,44 @@ const globalCss: SystemConfig['globalCss'] = {
   'svg *::selection': {
     color: 'none',
     background: 'none',
+  },
+
+  // Mobile touch optimizations
+  'button, [role="button"], input[type="button"], input[type="submit"], input[type="reset"]': {
+    // Ensure minimum touch target size on mobile
+    '@media (max-width: 999px)': {
+      minHeight: '44px',
+      minWidth: '44px',
+    },
+  },
+
+  'a, button, [role="button"]': {
+    // Remove default tap highlight on iOS
+    WebkitTapHighlightColor: 'transparent',
+    // Prevent text selection on touch
+    WebkitTouchCallout: 'none',
+  },
+
+  // iOS Safari safe area support
+  '@supports (padding: max(0px))': {
+    '& .safe-area-top': {
+      paddingTop: 'max(16px, env(safe-area-inset-top))',
+    },
+    '& .safe-area-bottom': {
+      paddingBottom: 'max(16px, env(safe-area-inset-bottom))',
+    },
+    '& .safe-area-left': {
+      paddingLeft: 'max(16px, env(safe-area-inset-left))',
+    },
+    '& .safe-area-right': {
+      paddingRight: 'max(16px, env(safe-area-inset-right))',
+    },
+    '& .safe-area-all': {
+      paddingTop: 'max(16px, env(safe-area-inset-top))',
+      paddingBottom: 'max(16px, env(safe-area-inset-bottom))',
+      paddingLeft: 'max(16px, env(safe-area-inset-left))',
+      paddingRight: 'max(16px, env(safe-area-inset-right))',
+    },
   },
   form: {
     w: '100%',
@@ -49,6 +89,22 @@ const globalCss: SystemConfig['globalCss'] = {
   },
   select: {
     ...webkitAutofillRules,
+  },
+  // Hide React Query DevTools
+  '[data-react-query-devtools-root]': {
+    display: 'none !important',
+  },
+  'button[aria-label*="React Query"]': {
+    display: 'none !important',
+  },
+  'button[aria-label*="TanStack Query"]': {
+    display: 'none !important',
+  },
+  'div[class*="react-query-devtools"]': {
+    display: 'none !important',
+  },
+  'div[class*="tanstack-query-devtools"]': {
+    display: 'none !important',
   },
   ...recaptcha,
   ...scrollbar,

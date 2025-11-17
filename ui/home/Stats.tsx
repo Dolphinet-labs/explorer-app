@@ -227,8 +227,8 @@ const Stats = () => {
 
   return (
     <Grid
-      gridTemplateColumns="1fr 1fr"
-      gridGap={{ base: 1, lg: 2 }}
+      gridTemplateColumns={{ base: '1fr', lg: '1fr 1fr' }}
+      gridGap={{ base: 3, lg: 2 }}
       flexBasis="50%"
       flexGrow={ 1 }
     >
@@ -237,7 +237,7 @@ const Stats = () => {
           key={ item.id }
           { ...item }
           isLoading={ isLoading }
-          _last={ items.length % 2 === 1 && index === items.length - 1 ? { gridColumn: 'span 2' } : undefined }/>
+          _last={ items.length % 2 === 1 && index === items.length - 1 ? { gridColumn: { lg: 'span 2' } } : undefined }/>
       ),
       ) }
     </Grid>

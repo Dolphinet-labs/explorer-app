@@ -4,3 +4,21 @@
   unicode-range: U+2192; /* Only the right arrow */
   font-display: swap;
 }
+
+/* Hide React Query DevTools */
+[data-react-query-devtools-root],
+button[aria-label*="React Query"],
+button[aria-label*="TanStack Query"],
+div[class*="react-query-devtools"],
+div[class*="tanstack-query-devtools"],
+div[id*="react-query-devtools"],
+div[id*="tanstack-query-devtools"],
+button[class*="react-query-devtools"],
+button[class*="tanstack-query-devtools"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+}

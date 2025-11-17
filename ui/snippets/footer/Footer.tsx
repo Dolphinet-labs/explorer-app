@@ -14,7 +14,8 @@ import { Link } from 'toolkit/chakra/link';
 import { Skeleton } from 'toolkit/chakra/skeleton';
 import { copy } from 'toolkit/utils/htmlEntities';
 import { CONTENT_MAX_WIDTH } from 'ui/shared/layout/utils';
-import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
+// Hidden: NetworkAddToWallet component
+// import NetworkAddToWallet from 'ui/shared/NetworkAddToWallet';
 
 import FooterLinkItem from './FooterLinkItem';
 import IntTxsIndexingStatus from './IntTxsIndexingStatus';
@@ -49,7 +50,7 @@ const Footer = () => {
       url: 'https://github.com/blockscout/blockscout',
     },
     {
-      icon: 'social/twitter' as const,
+      icon: 'social/twitter_filled' as const,
       iconSize: '18px',
       text: 'X (ex-Twitter)',
       url: 'https://x.com/blockscout',
@@ -109,7 +110,8 @@ const Footer = () => {
         _empty={{ display: 'none' }}
       >
         { !config.UI.indexingAlert.intTxs.isHidden && <IntTxsIndexingStatus/> }
-        <NetworkAddToWallet/>
+        { /* Hidden: NetworkAddToWallet component */ }
+        { /* <NetworkAddToWallet/> */ }
       </Flex>
     );
   }, []);
@@ -175,7 +177,7 @@ const Footer = () => {
     gridTemplateColumns: { base: '1fr', lg: 'minmax(auto, 400px) 1fr' },
     columnGap: { lg: '48px', xl: '64px' },
     maxW: `${ CONTENT_MAX_WIDTH }px`,
-    m: '0 auto',
+    m: 0,
   };
 
   const renderRecaptcha = (gridArea?: GridProps['gridArea']) => {
@@ -298,12 +300,12 @@ const Footer = () => {
           borderTopWidth="1px"
           borderTopColor="border.divider"
           maxW={ `${ CONTENT_MAX_WIDTH }px` }
-          m="0 auto"
+          m={ 0 }
         >
           <Text
             fontSize="xs"
             color="text.secondary"
-            textAlign="center"
+            textAlign="left"
           >
             Copyright { copy } { (new Date()).getFullYear() } { config.chain.name }. All rights reserved.
           </Text>

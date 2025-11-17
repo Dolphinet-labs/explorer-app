@@ -16,8 +16,8 @@ export const textStyles: ThemingConfig['textStyles'] = {
   heading: {
     xl: {
       value: {
-        fontSize: '32px',
-        lineHeight: '40px',
+        fontSize: { base: '28px', md: '32px' },
+        lineHeight: { base: '36px', md: '40px' },
         fontWeight: '500',
         letterSpacing: '-0.5px',
         fontFamily: 'heading',
@@ -25,32 +25,32 @@ export const textStyles: ThemingConfig['textStyles'] = {
     },
     lg: {
       value: {
-        fontSize: '24px',
-        lineHeight: '32px',
+        fontSize: { base: '22px', md: '24px' },
+        lineHeight: { base: '30px', md: '32px' },
         fontWeight: '500',
         fontFamily: 'heading',
       },
     },
     md: {
       value: {
-        fontSize: '18px',
-        lineHeight: '24px',
+        fontSize: { base: '18px', md: '18px' },
+        lineHeight: { base: '26px', md: '24px' },
         fontWeight: '500',
         fontFamily: 'heading',
       },
     },
     sm: {
       value: {
-        fontSize: '16px',
-        lineHeight: '24px',
+        fontSize: { base: '16px', md: '16px' },
+        lineHeight: { base: '24px', md: '24px' },
         fontWeight: '500',
         fontFamily: 'heading',
       },
     },
     xs: {
       value: {
-        fontSize: '14px',
-        lineHeight: '20px',
+        fontSize: { base: '15px', md: '14px' },
+        lineHeight: { base: '22px', md: '20px' },
         fontWeight: '600',
         fontFamily: 'heading',
       },
@@ -59,32 +59,32 @@ export const textStyles: ThemingConfig['textStyles'] = {
   text: {
     xl: {
       value: {
-        fontSize: '20px',
-        lineHeight: '28px',
+        fontSize: { base: '18px', md: '20px' },
+        lineHeight: { base: '26px', md: '28px' },
         fontWeight: '400',
         fontFamily: 'body',
       },
     },
     md: {
       value: {
-        fontSize: '16px',
-        lineHeight: '24px',
+        fontSize: { base: '16px', md: '16px' },
+        lineHeight: { base: '24px', md: '24px' },
         fontWeight: '400',
         fontFamily: 'body',
       },
     },
     sm: {
       value: {
-        fontSize: '14px',
-        lineHeight: '20px',
+        fontSize: { base: '15px', md: '14px' },
+        lineHeight: { base: '22px', md: '20px' },
         fontWeight: '400',
         fontFamily: 'body',
       },
     },
     xs: {
       value: {
-        fontSize: '12px',
-        lineHeight: '16px',
+        fontSize: { base: '14px', md: '12px' },
+        lineHeight: { base: '20px', md: '16px' },
         fontWeight: '400',
         fontFamily: 'body',
       },
