@@ -42,7 +42,7 @@ const DeFiDropdown = () => {
             Blockscout{ space }
           </chakra.span>
           DeFi
-          <IconSvg name="arrows/east-mini" boxSize={ 4 } ml={ 1 } transform="rotate(-90deg)"/>
+          <IconSvg name="arrows\\east-mini" boxSize={ 4 } ml={ 1 } transform="rotate(-90deg)"/>
         </Button>
       </PopoverTrigger>
       <PopoverContent w="auto">

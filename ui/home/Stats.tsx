@@ -193,7 +193,7 @@ const Stats = () => {
       },
       apiData?.rootstock_locked_btc && {
         id: 'btc_locked' as const,
-        icon: 'coins/bitcoin' as const,
+        icon: 'coins\\bitcoin' as const,
         label: 'BTC Locked in 2WP',
         value: `${ BigNumber(apiData.rootstock_locked_btc).div(WEI).dp(0).toFormat() } RBTC`,
         isLoading,

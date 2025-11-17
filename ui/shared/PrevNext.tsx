@@ -45,7 +45,7 @@ const PrevNext = ({ className, onClick, prevLabel, nextLabel, isPrevDisabled, is
           onClick={ handelPrevClick }
           disabled={ isPrevDisabled }
         >
-          <IconSvg name="arrows/east-mini"/>
+          <IconSvg name="arrows\\east-mini"/>
         </IconButton>
       </Tooltip>
       <Tooltip content={ nextLabel }>
@@ -58,7 +58,7 @@ const PrevNext = ({ className, onClick, prevLabel, nextLabel, isPrevDisabled, is
           onClick={ handelNextClick }
           disabled={ isNextDisabled }
         >
-          <IconSvg name="arrows/east-mini" transform="rotate(180deg)"/>
+          <IconSvg name="arrows\\east-mini" transform="rotate(180deg)"/>
         </IconButton>
       </Tooltip>
     </Box>

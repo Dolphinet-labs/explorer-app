@@ -44,7 +44,7 @@ const MarketplaceAppGraphLinks = ({ className, links }: Props) => {
         positioning={{ placement: isMobile ? 'bottom-end' : 'bottom' }}
         interactive
       >
-        <IconSvg name="brands/graph" boxSize={ 5 } onClick={ handleButtonClick }/>
+        <IconSvg name="brands\\graph" boxSize={ 5 } onClick={ handleButtonClick }/>
       </Tooltip>
     </Box>
   );

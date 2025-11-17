@@ -92,7 +92,7 @@ const SearchResultTableItem = ({ data, searchTerm, isLoading, addressFormat }: P
                 <Box overflow="hidden" whiteSpace="nowrap" w={ data.is_smart_contract_verified ? 'calc(100%-28px)' : 'unset' }>
                   <HashStringShortenDynamic hash={ hash }/>
                 </Box>
-                { data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
+                { data.is_smart_contract_verified && <IconSvg name="status\\success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
               </Skeleton>
             </TableCell>
             <TableCell verticalAlign="middle" isNumeric>
@@ -200,7 +200,7 @@ const SearchResultTableItem = ({ data, searchTerm, isLoading, addressFormat }: P
                 <Box overflow="hidden" whiteSpace="nowrap" w={ data.is_smart_contract_verified ? 'calc(100%-28px)' : 'unset' }>
                   <HashStringShortenDynamic hash={ hash }/>
                 </Box>
-                { data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
+                { data.is_smart_contract_verified && <IconSvg name="status\\success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
               </Flex>
             </TableCell>
             <TableCell/>
@@ -436,7 +436,7 @@ const SearchResultTableItem = ({ data, searchTerm, isLoading, addressFormat }: P
                 <Box overflow="hidden" whiteSpace="nowrap" w={ data.is_smart_contract_verified ? 'calc(100%-28px)' : 'unset' }>
                   <HashStringShortenDynamic hash={ hash }/>
                 </Box>
-                { data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
+                { data.is_smart_contract_verified && <IconSvg name="status\\success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
               </Flex>
             </TableCell>
             <TableCell>

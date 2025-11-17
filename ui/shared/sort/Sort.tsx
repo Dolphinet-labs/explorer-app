@@ -25,7 +25,7 @@ const Sort = (props: Props) => {
             size="md"
             variant="dropdown"
           >
-            <IconSvg name="arrows/up-down"/>
+            <IconSvg name="arrows\\up-down"/>
           </IconButton>
         </SelectControl>
       );

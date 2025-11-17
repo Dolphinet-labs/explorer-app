@@ -14,16 +14,16 @@ interface Item {
   color: string;
 }
 const SETTINGS: Record<keyof SocialLinkFields, Item> = {
-  github: { label: 'GitHub', icon: 'social/github_filled', color: 'text.primary' },
-  telegram: { label: 'Telegram', icon: 'social/telegram_filled', color: 'telegram' },
-  linkedin: { label: 'LinkedIn', icon: 'social/linkedin_filled', color: 'linkedin' },
-  discord: { label: 'Discord', icon: 'social/discord_filled', color: 'discord' },
-  slack: { label: 'Slack', icon: 'social/slack_filled', color: 'slack' },
-  twitter: { label: 'X (ex-Twitter)', icon: 'social/twitter_filled', color: 'text.primary' },
-  opensea: { label: 'OpenSea', icon: 'social/opensea_filled', color: 'opensea' },
-  facebook: { label: 'Facebook', icon: 'social/facebook_filled', color: 'facebook' },
-  medium: { label: 'Medium', icon: 'social/medium_filled', color: 'text.primary' },
-  reddit: { label: 'Reddit', icon: 'social/reddit_filled', color: 'reddit' },
+  github: { label: 'GitHub', icon: 'social\\github_filled', color: 'text.primary' },
+  telegram: { label: 'Telegram', icon: 'social\\telegram_filled', color: 'telegram' },
+  linkedin: { label: 'LinkedIn', icon: 'social\\linkedin_filled', color: 'linkedin' },
+  discord: { label: 'Discord', icon: 'social\\discord_filled', color: 'discord' },
+  slack: { label: 'Slack', icon: 'social\\slack_filled', color: 'slack' },
+  twitter: { label: 'X (ex-Twitter)', icon: 'social\\twitter_filled', color: 'text.primary' },
+  opensea: { label: 'OpenSea', icon: 'social\\opensea_filled', color: 'opensea' },
+  facebook: { label: 'Facebook', icon: 'social\\facebook_filled', color: 'facebook' },
+  medium: { label: 'Medium', icon: 'social\\medium_filled', color: 'text.primary' },
+  reddit: { label: 'Reddit', icon: 'social\\reddit_filled', color: 'reddit' },
 };
 
 interface Props {

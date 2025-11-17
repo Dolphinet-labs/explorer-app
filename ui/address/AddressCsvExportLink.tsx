@@ -38,7 +38,7 @@ const AddressCsvExportLink = ({ className, address, params, isLoading }: Props) 
         minW={ 8 }
         justifyContent="center"
       >
-        <IconSvg name="files/csv" boxSize={ 6 }/>
+        <IconSvg name="files\\csv" boxSize={ 6 }/>
         <chakra.span ml={ 1 } hideBelow="lg">Download CSV</chakra.span>
       </Link>
     </Tooltip>

@@ -83,24 +83,24 @@ const MarketplaceAppModal = ({
 
   const socialLinks = [
     telegram ? {
-      icon: 'social/telegram_filled' as IconName,
+      icon: 'social\\telegram_filled' as IconName,
       url: telegram,
     } : null,
     twitter ? {
-      icon: 'social/twitter_filled' as IconName,
+      icon: 'social\\twitter_filled' as IconName,
       url: twitter,
     } : null,
     discord ? {
-      icon: 'social/discord_filled' as IconName,
+      icon: 'social\\discord_filled' as IconName,
       url: discord,
     } : null,
   ].filter(Boolean);
 
   if (github) {
     if (Array.isArray(github)) {
-      github.forEach((url) => socialLinks.push({ icon: 'social/github_filled', url }));
+      github.forEach((url) => socialLinks.push({ icon: 'social\\github_filled', url }));
     } else {
-      socialLinks.push({ icon: 'social/github_filled', url: github });
+      socialLinks.push({ icon: 'social\\github_filled', url: github });
     }
   }
 
@@ -248,7 +248,7 @@ const MarketplaceAppModal = ({
               mb={ 6 }
             >
               <Flex alignItems="center" gap={ 2 } flexWrap="wrap">
-                <IconSvg name="contracts/verified_many" boxSize={ 5 } color="green.500"/>
+                <IconSvg name="contracts\\verified_many" boxSize={ 5 } color="green.500"/>
                 <Text>Verified contracts</Text>
                 <Text fontWeight="500">
                   { securityReport?.overallInfo.verifiedNumber ?? 0 } of { securityReport?.overallInfo.totalContractsNumber ?? 0 }

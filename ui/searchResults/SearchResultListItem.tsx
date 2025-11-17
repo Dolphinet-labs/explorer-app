@@ -316,7 +316,7 @@ const SearchResultListItem = ({ data, searchTerm, isLoading, addressFormat }: Pr
               <Text whiteSpace="nowrap" overflow="hidden">
                 <HashStringShortenDynamic hash={ hash } noTooltip/>
               </Text>
-              { data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
+              { data.is_smart_contract_verified && <IconSvg name="status\\success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
             </Skeleton>
             <Skeleton loading={ isLoading } overflow="hidden" whiteSpace="nowrap" textOverflow="ellipsis" fontWeight={ 700 }>
               { data.token_type === 'ERC-20' && data.exchange_rate && `$${ Number(data.exchange_rate).toLocaleString() }` }
@@ -368,7 +368,7 @@ const SearchResultListItem = ({ data, searchTerm, isLoading, addressFormat }: Pr
             <Box overflow="hidden">
               <HashStringShortenDynamic hash={ hash }/>
             </Box>
-            { data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
+            { data.is_smart_contract_verified && <IconSvg name="status\\success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
           </Flex>
         );
       }

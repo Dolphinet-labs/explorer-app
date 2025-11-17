@@ -186,7 +186,7 @@ const TokenPageContent = () => {
           return (
             <>
               <span>Contract</span>
-              <IconSvg name="status/success" boxSize="14px" color="green.500"/>
+              <IconSvg name="status\\success" boxSize="14px" color="green.500"/>
             </>
           );
         }

@@ -36,7 +36,7 @@ const SearchBarSuggestDomain = ({ data, isMobile, searchTerm, addressFormat }: I
     </Text>
   );
 
-  const isContractVerified = data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" flexShrink={ 0 }/>;
+  const isContractVerified = data.is_smart_contract_verified && <IconSvg name="status\\success" boxSize="14px" color="green.500" flexShrink={ 0 }/>;
 
   const expiresText = data.ens_info?.expiry_date ? ` expires ${ dayjs(data.ens_info.expiry_date).fromNow() }` : '';
   const ensNamesCount = data?.ens_info.names_count > 39 ? '40+' : `+${ data.ens_info.names_count - 1 }`;
