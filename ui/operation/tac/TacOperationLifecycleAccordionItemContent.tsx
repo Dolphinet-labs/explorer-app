@@ -74,7 +74,7 @@ const TacOperationLifecycleAccordionItemContent = ({ isLast, data }: Props) => {
                 return <TxEntityTon key={ tx.hash } hash={ tx.hash } noCopy={ false }/>;
               }
 
-              return <TxEntity key={ tx.hash } hash={ tx.hash } icon={{ name: 'brands/tac' }} noCopy={ false }/>;
+              return <TxEntity key={ tx.hash } hash={ tx.hash } icon={{ name: 'brands\\tac' }} noCopy={ false }/>;
             })
           }
         </GridItem>

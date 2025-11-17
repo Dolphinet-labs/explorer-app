@@ -12,26 +12,26 @@ interface Props {
 const CodeEditorFileIcon = ({ className, fileName }: Props) => {
   const name: IconName = (() => {
     if (/.vy$/.test(fileName)) {
-      return 'monaco/vyper';
+      return 'monaco\\vyper';
     }
 
     if (/.sol|.yul$/.test(fileName)) {
-      return 'monaco/solidity';
+      return 'monaco\\solidity';
     }
 
     if (/.rs$/.test(fileName)) {
-      return 'monaco/rust';
+      return 'monaco\\rust';
     }
 
     if (/^Cargo\./.test(fileName)) {
-      return 'monaco/cargo';
+      return 'monaco\\cargo';
     }
 
     if (/.toml$/.test(fileName)) {
-      return 'monaco/toml';
+      return 'monaco\\toml';
     }
 
-    return 'monaco/file';
+    return 'monaco\\file';
   })();
 
   return <IconSvg className={ className } name={ name } boxSize="16px"/>;

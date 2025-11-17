@@ -80,7 +80,7 @@ const NavLinkGroup = ({ item }: Props) => {
             ml={{ lg: '2px' }}
           />
         ) }
-        <IconSvg name="arrows\\east-mini" boxSize={ 5 } transform="rotate(-90deg)" ml={ 1 }/>
+        <IconSvg name={ 'arrows\\east-mini' } boxSize={ 5 } transform="rotate(-90deg)" ml={ 1 }/>
       </Link>
     </Tooltip>
   );

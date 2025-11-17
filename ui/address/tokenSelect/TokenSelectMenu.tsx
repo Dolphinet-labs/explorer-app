@@ -73,7 +73,7 @@ const TokenSelectMenu = ({ erc20sort, erc1155sort, erc404sort, filteredData, onI
                 </Text>
                 { hasSort && (
                   <Link data-type={ type } onClick={ onSortClick } aria-label={ `Sort ${ getTokenTypeName(type) } tokens` }>
-                    <IconSvg name="arrows\\east" boxSize={ 5 } transform={ arrowTransform } transitionDuration="faster"/>
+                    <IconSvg name={ 'arrows\\east' } boxSize={ 5 } transform={ arrowTransform } transitionDuration="faster"/>
                   </Link>
                 ) }
               </Flex>

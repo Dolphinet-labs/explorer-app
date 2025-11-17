@@ -86,7 +86,7 @@ const NavLinkGroup = ({ item, isCollapsed }: Props) => {
               />
             ) }
             <IconSvg
-              name="arrows/east-mini"
+              name={ 'arrows\\east-mini' }
               position="absolute"
               right="7px"
               transform="rotate(180deg)"

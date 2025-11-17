@@ -60,20 +60,20 @@ const Icon = (props: IconProps) => {
       return (
         <EntityBase.Icon
           { ...props }
-          name="brands/safe"
+          name={ 'brands\\safe' }
         />
       );
     }
 
     const isProxy = Boolean(props.address.implementations?.length);
     const isVerified = isProxy ? props.address.is_verified && props.address.implementations?.every(({ name }) => Boolean(name)) : props.address.is_verified;
-    const contractIconName: EntityBase.IconBaseProps['name'] = props.address.is_verified ? 'contracts/verified' : 'contracts/regular';
+    const contractIconName: EntityBase.IconBaseProps['name'] = props.address.is_verified ? 'contracts\\verified' : 'contracts\\regular';
     const label = (isVerified ? 'verified ' : '') + (isProxy ? 'proxy contract' : 'contract') + (props.hintPostfix ?? '');
 
     return (
       <EntityBase.Icon
         { ...props }
-        name={ isProxy ? 'contracts/proxy' : contractIconName }
+        name={ isProxy ? 'contracts\\proxy' : contractIconName }
         color={ isVerified ? 'green.500' : undefined }
         borderRadius={ 0 }
         hint={ label.slice(0, 1).toUpperCase() + label.slice(1) }

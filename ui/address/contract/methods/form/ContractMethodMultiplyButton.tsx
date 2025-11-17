@@ -78,7 +78,7 @@ const ContractMethodMultiplyButton = ({ onClick, isDisabled, initialValue, onCha
             borderLeftColor="border.divider"
           >
             <IconSvg
-              name="arrows/east-mini"
+              name={ 'arrows\\east-mini' }
               transitionDuration="fast"
               transitionProperty="transform"
               transitionTimingFunction="ease-in-out"

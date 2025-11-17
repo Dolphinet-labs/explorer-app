@@ -60,7 +60,7 @@ const ContractCodeIde = ({ className, hash, isLoading }: Props) => {
           flexShrink={ 0 }
         >
           <span>Open in</span>
-          <IconSvg name="arrows\\east-mini" transform={ open ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 }/>
+          <IconSvg name={ 'arrows\\east-mini' } transform={ open ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 }/>
         </Button>
       </PopoverTrigger>
       <PopoverContent w="240px">

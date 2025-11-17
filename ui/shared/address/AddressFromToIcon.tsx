@@ -39,7 +39,7 @@ const AddressFromToIcon = ({ isLoading, type, className }: Props) => {
 
   const icon = (
     <IconSvg
-      name="arrows/east"
+      name={ 'arrows\\east' }
       { ...(styles[type]) }
       className={ className }
       isLoading={ isLoading }

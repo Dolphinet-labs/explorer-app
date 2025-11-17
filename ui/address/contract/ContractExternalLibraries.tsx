@@ -61,8 +61,8 @@ const ContractExternalLibraries = ({ className, data, isLoading }: Props) => {
       aria-label="View external libraries"
     >
       <span>{ data.length } { data.length > 1 ? 'Libraries' : 'Library' } </span>
-      <IconSvg name="status\\warning" boxSize={ 5 } color="orange.400" ml="2px"/>
-      <IconSvg name="arrows\\east-mini" transform={ open ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 } ml={ 2 }/>
+      <IconSvg name={ 'status\\warning' } boxSize={ 5 } color="orange.400" ml="2px"/>
+      <IconSvg name={ 'arrows\\east-mini' } transform={ open ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 } ml={ 2 }/>
     </Button>
   );
 

@@ -92,7 +92,7 @@ const AppSecurityReport = ({
           <Text fontWeight="500" textStyle="xs" mb={ 2 } color="text.secondary">Smart contracts info</Text>
           <Flex alignItems="center" justifyContent="space-between" py={ 1.5 }>
             <Flex alignItems="center">
-              <IconSvg name="contracts\\verified_many" boxSize={ 5 } color="green.500" mr={ 1 }/>
+              <IconSvg name={ 'contracts\\verified_many' } boxSize={ 5 } color="green.500" mr={ 1 }/>
               <Text>Verified contracts</Text>
             </Flex>
             <Link textStyle="sm" fontWeight="500" onClick={ showAllContracts }>

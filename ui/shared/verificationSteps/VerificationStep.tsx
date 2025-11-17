@@ -25,7 +25,7 @@ const VerificationStep = ({ step, isLast, isPassed, isPending, noIcon }: Props) 
     <HStack gap={ 2 } color={ stepColor }>
       { !noIcon && <IconSvg name={ isPassed ? 'verification-steps/finalized' : 'verification-steps/unfinalized' } boxSize={ 5 }/> }
       <Box color={ stepColor }>{ typeof step === 'string' ? step : step.content }</Box>
-      { !isLast && <IconSvg name="arrows\\east" boxSize={ 5 }/> }
+      { !isLast && <IconSvg name={ 'arrows\\east' } boxSize={ 5 }/> }
     </HStack>
   );
 };

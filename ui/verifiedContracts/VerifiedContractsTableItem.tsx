@@ -110,7 +110,7 @@ const VerifiedContractsTableItem = ({ data, isLoading }: Props) => {
       </TableCell>
       <TableCell>
         <Flex alignItems="center" columnGap={ 2 } my={ 1 }>
-          <IconSvg name="status\\success" boxSize={ 4 } color="green.500" isLoading={ isLoading }/>
+          <IconSvg name={ 'status\\success' } boxSize={ 4 } color="green.500" isLoading={ isLoading }/>
           <TimeWithTooltip
             timestamp={ data.verified_at }
             isLoading={ isLoading }

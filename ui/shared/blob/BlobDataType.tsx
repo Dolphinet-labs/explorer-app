@@ -11,9 +11,9 @@ interface Props {
 }
 
 const TYPES: Record<string, { iconName: IconName; label: string }> = {
-  image: { iconName: 'blobs/image', label: 'Image' },
-  text: { iconName: 'blobs/text', label: 'Text' },
-  raw: { iconName: 'blobs/raw', label: 'Raw' },
+  image: { iconName: 'blobs\\image', label: 'Image' },
+  text: { iconName: 'blobs\\text', label: 'Text' },
+  raw: { iconName: 'blobs\\raw', label: 'Raw' },
 };
 
 const BlobDataType = ({ data, isLoading }: Props) => {

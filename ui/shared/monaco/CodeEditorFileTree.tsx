@@ -68,7 +68,7 @@ const CodeEditorFileTree = ({ tree, level = 0, onItemClick, isCollapsed, selecte
                     mr="2px"
                   />
                   <IconSvg
-                    name={ isExpanded ? 'monaco/folder-open' : 'monaco/folder' }
+                    name={ isExpanded ? 'monaco\\folder-open' : 'monaco\\folder' }
                     boxSize="16px"
                     mr="4px"
                   />

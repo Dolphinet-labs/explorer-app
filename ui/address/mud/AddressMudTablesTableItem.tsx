@@ -53,7 +53,7 @@ const AddressMudTablesTableItem = ({ item, isLoading, hash }: Props) => {
           <Skeleton loading={ isLoading }>
             <Link display="block">
               <IconSvg
-                name="arrows/east-mini"
+                name={ 'arrows\\east-mini' }
                 transform={ isOpened ? 'rotate(270deg)' : 'rotate(180deg)' }
                 boxSize={ 6 }
                 cursor="pointer"

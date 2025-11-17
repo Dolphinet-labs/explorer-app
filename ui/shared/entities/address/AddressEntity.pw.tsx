@@ -83,7 +83,7 @@ test.describe('shield', () => {
       <AddressEntity
         address={{ ...addressMock.contract, is_verified: true, implementations: null }}
         icon={{
-          shield: { name: 'brands/ton' },
+          shield: { name: 'brands\\ton' },
           hint: 'Address on TON',
           hintPostfix: ' on TON',
         }}

@@ -25,7 +25,7 @@ const UserIdenticon = ({ address, isAutoConnectDisabled }: Props) => {
           borderColor={{ _light: 'orange.100', _dark: 'orange.900' }}
         >
           <IconSvg
-            name="integration/partial"
+            name={ 'integration\\partial' }
             color="white"
             boxSize={ 2 }
           />
