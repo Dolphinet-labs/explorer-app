@@ -20,7 +20,7 @@ const NetworkMenuLink = ({ title, icon, isActive: isActiveProp, isMobile, url, i
     <Image w="30px" h="30px" src={ icon } alt={ `${ title } network icon` } style={ style }/>
   ) : (
     <IconSvg
-      name={ 'networks\\icon-placeholder' }
+      name="networks/icon-placeholder"
       boxSize="30px"
       color={{ base: 'blackAlpha.100', _dark: 'whiteAlpha.300' }}
     />

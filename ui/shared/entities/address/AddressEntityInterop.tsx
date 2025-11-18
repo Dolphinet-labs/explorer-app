@@ -31,7 +31,7 @@ const IconStub = () => {
       borderColor="global.body.bg"
     >
       <IconSvg
-        name={ 'networks\\icon-placeholder' }
+        name="networks/icon-placeholder"
         width="10px"
         height="10px"
         color="text.secondary"

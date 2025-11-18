@@ -368,7 +368,7 @@ const SearchResultListItem = ({ data, searchTerm, isLoading, addressFormat }: Pr
             <Box overflow="hidden">
               <HashStringShortenDynamic hash={ hash }/>
             </Box>
-            { data.is_smart_contract_verified && <IconSvg name={ 'status\\success' } boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
+            { data.is_smart_contract_verified && <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/> }
           </Flex>
         );
       }
