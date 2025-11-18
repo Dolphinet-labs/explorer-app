@@ -35,7 +35,7 @@ const SearchBarSuggestToken = ({ data, isMobile, searchTerm, addressFormat }: It
   );
 
   const contractVerifiedIcon = data.is_smart_contract_verified && (
-    <IconSvg name={ 'status\\success' } boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/>
+    <IconSvg name="status/success" boxSize="14px" color="green.500" ml={ 1 } flexShrink={ 0 }/>
   );
   const additionalInfo = (
     <Text overflow="hidden" whiteSpace="nowrap" fontWeight={ 700 }>

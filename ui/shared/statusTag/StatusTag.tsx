@@ -23,15 +23,15 @@ const StatusTag = ({ type, text, errorText, ...rest }: Props) => {
 
   switch (type) {
     case 'ok':
-      icon = 'status\\success';
+      icon = 'status/success';
       colorPalette = 'green';
       break;
     case 'error':
-      icon = 'status\\error';
+      icon = 'status/error';
       colorPalette = 'red';
       break;
     case 'pending':
-      icon = 'status\\pending';
+      icon = 'status/pending';
       colorPalette = 'gray';
       break;
   }

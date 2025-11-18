@@ -121,14 +121,14 @@ const TxInfo = ({ data, tacOperations, isLoading, socketStatus }: Props) => {
   const executionSuccessBadge = toAddress?.is_contract && data.result === 'success' ? (
     <Tooltip content="Contract execution completed">
       <chakra.span display="inline-flex" ml={ 2 } mr={ 1 }>
-        <IconSvg name={ 'status\\success' } boxSize={ 4 } color={{ _light: 'blackAlpha.800', _dark: 'whiteAlpha.800' }} cursor="pointer"/>
+        <IconSvg name="status/success" boxSize={ 4 } color={{ _light: 'blackAlpha.800', _dark: 'whiteAlpha.800' }} cursor="pointer"/>
       </chakra.span>
     </Tooltip>
   ) : null;
   const executionFailedBadge = toAddress?.is_contract && Boolean(data.status) && data.result !== 'success' ? (
     <Tooltip content="Error occurred during contract execution">
       <chakra.span display="inline-flex" ml={ 2 } mr={ 1 }>
-        <IconSvg name={ 'status\\error' } boxSize={ 4 } color="text.error" cursor="pointer"/>
+        <IconSvg name="status/error" boxSize={ 4 } color="text.error" cursor="pointer"/>
       </chakra.span>
     </Tooltip>
   ) : null;

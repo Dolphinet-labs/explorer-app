@@ -101,7 +101,7 @@ const VerifiedContractsListItem = ({ data, isLoading }: Props) => {
       <Flex columnGap={ 3 }>
         <Skeleton loading={ isLoading } fontWeight={ 500 }>Verified</Skeleton>
         <Flex alignItems="center" columnGap={ 2 }>
-          <IconSvg name={ 'status\\success' } boxSize={ 4 } color="green.500" isLoading={ isLoading }/>
+          <IconSvg name="status/success" boxSize={ 4 } color="green.500" isLoading={ isLoading }/>
           <TimeWithTooltip
             timestamp={ data.verified_at }
             isLoading={ isLoading }
