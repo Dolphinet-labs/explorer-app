@@ -22,7 +22,7 @@ const MarketplaceAppIntegrationIcon = ({ external, internalWallet }: Props) => {
       text = 'This app opens in a separate tab';
       boxSize = 4;
     } else if (internalWallet) {
-      icon = 'integration\\full';
+      icon = 'integration/full';
       color = 'green.500';
       text = 'This app opens in Blockscout and your Blockscout wallet connects automatically';
     }
