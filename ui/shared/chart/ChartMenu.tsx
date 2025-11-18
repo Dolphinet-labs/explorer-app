@@ -145,14 +145,14 @@ const ChartMenu = ({
             value="save-png"
             onClick={ handleFileSaveClick }
           >
-            <IconSvg name={ 'files\\image' } boxSize={ 5 }/>
+            <IconSvg name="files/image" boxSize={ 5 }/>
             Save as PNG
           </MenuItem>
           <MenuItem
             value="save-csv"
             onClick={ handleSVGSavingClick }
           >
-            <IconSvg name={ 'files\\csv' } boxSize={ 5 }/>
+            <IconSvg name="files/csv" boxSize={ 5 }/>
             Save as CSV
           </MenuItem>
         </MenuContent>
