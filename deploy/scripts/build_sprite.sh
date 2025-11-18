@@ -9,6 +9,13 @@ create_registry_file() {
     # Create a temporary file to store the registry
     local registry_file="$target_dir/registry.json"
     
+    # Check if jq is available
+    if ! command -v jq &> /dev/null; then
+        echo "⚠️  Warning: jq not found, skipping registry.json creation"
+        echo "   Registry file is optional and only used for the sprite preview page"
+        return 0
+    fi
+    
     # Start the JSON array
     echo "[]" > "$registry_file"
     
