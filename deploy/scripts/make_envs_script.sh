@@ -27,6 +27,11 @@ for var in $(env | grep '^NEXT_PUBLIC_' | cut -d= -f1); do
   # Get the value of the variable
   value="${!var}"
 
+  # Skip empty values
+  if [ -z "$value" ]; then
+    continue
+  fi
+
   # Replace double quotes with single quotes
   value="${value//\"/\'}"
 

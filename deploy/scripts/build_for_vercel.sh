@@ -46,7 +46,11 @@ fi
 # Step 3: Generate envs.js with sprite hash
 echo "📝 Generating envs.js..."
 # Export the sprite hash to ensure it's available in the subprocess
-export NEXT_PUBLIC_ICON_SPRITE_HASH
+# Also ensure it's in the environment for the subprocess
+if [ -n "$NEXT_PUBLIC_ICON_SPRITE_HASH" ]; then
+    export NEXT_PUBLIC_ICON_SPRITE_HASH
+    echo "📦 Exporting NEXT_PUBLIC_ICON_SPRITE_HASH=${NEXT_PUBLIC_ICON_SPRITE_HASH} for envs.js"
+fi
 bash deploy/scripts/make_envs_script.sh
 
 # Step 4: Build Next.js app
