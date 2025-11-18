@@ -160,7 +160,7 @@ const AddressMudRecordsTable = ({
                         { sorting?.sort === `key${ index }` && sorting.order && (
                           <Box minW="24px" w="24px" mr={ 2 }>
                             <IconSvg
-                              name={ 'arrows\\east' }
+                              name="arrows/east"
                               boxSize={ 5 }
                               transform={ sorting.order === 'asc' ? 'rotate(-90deg)' : 'rotate(90deg)' }
                             />
