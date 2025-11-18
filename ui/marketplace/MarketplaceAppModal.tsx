@@ -83,24 +83,24 @@ const MarketplaceAppModal = ({
 
   const socialLinks = [
     telegram ? {
-      icon: 'social\\telegram_filled' as IconName,
+      icon: 'social/telegram_filled' as IconName,
       url: telegram,
     } : null,
     twitter ? {
-      icon: 'social\\twitter_filled' as IconName,
+      icon: 'social/twitter_filled' as IconName,
       url: twitter,
     } : null,
     discord ? {
-      icon: 'social\\discord_filled' as IconName,
+      icon: 'social/discord_filled' as IconName,
       url: discord,
     } : null,
   ].filter(Boolean);
 
   if (github) {
     if (Array.isArray(github)) {
-      github.forEach((url) => socialLinks.push({ icon: 'social\\github_filled', url }));
+      github.forEach((url) => socialLinks.push({ icon: 'social/github_filled', url }));
     } else {
-      socialLinks.push({ icon: 'social\\github_filled', url: github });
+      socialLinks.push({ icon: 'social/github_filled', url: github });
     }
   }
 

@@ -44,19 +44,19 @@ const Footer = () => {
       url: issueUrl,
     },
     {
-      icon: 'social\\git' as const,
+      icon: 'social/git' as const,
       iconSize: '18px',
       text: 'Contribute',
       url: 'https://github.com/blockscout/blockscout',
     },
     {
-      icon: 'social\\twitter_filled' as const,
+      icon: 'social/twitter_filled' as const,
       iconSize: '18px',
       text: 'X (ex-Twitter)',
       url: 'https://x.com/blockscout',
     },
     {
-      icon: 'social\\discord' as const,
+      icon: 'social/discord' as const,
       iconSize: '24px',
       text: 'Discord',
       url: 'https://discord.gg/blockscout',

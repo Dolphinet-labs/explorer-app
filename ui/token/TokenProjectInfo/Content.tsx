@@ -13,22 +13,22 @@ interface Props {
 }
 
 const SOCIAL_LINKS: Array<Omit<ServiceLinkProps, 'href'>> = [
-  { field: 'github', icon: 'social\\github_filled', title: 'Github' },
-  { field: 'twitter', icon: 'social\\twitter_filled', title: 'X (ex-Twitter)' },
-  { field: 'telegram', icon: 'social\\telegram_filled', title: 'Telegram' },
-  { field: 'openSea', icon: 'social\\opensea_filled', title: 'OpenSea' },
-  { field: 'linkedin', icon: 'social\\linkedin_filled', title: 'LinkedIn' },
-  { field: 'facebook', icon: 'social\\facebook_filled', title: 'Facebook' },
-  { field: 'discord', icon: 'social\\discord_filled', title: 'Discord' },
-  { field: 'medium', icon: 'social\\medium_filled', title: 'Medium' },
-  { field: 'slack', icon: 'social\\slack_filled', title: 'Slack' },
-  { field: 'reddit', icon: 'social\\reddit_filled', title: 'Reddit' },
+  { field: 'github', icon: 'social/github_filled', title: 'Github' },
+  { field: 'twitter', icon: 'social/twitter_filled', title: 'X (ex-Twitter)' },
+  { field: 'telegram', icon: 'social/telegram_filled', title: 'Telegram' },
+  { field: 'openSea', icon: 'social/opensea_filled', title: 'OpenSea' },
+  { field: 'linkedin', icon: 'social/linkedin_filled', title: 'LinkedIn' },
+  { field: 'facebook', icon: 'social/facebook_filled', title: 'Facebook' },
+  { field: 'discord', icon: 'social/discord_filled', title: 'Discord' },
+  { field: 'medium', icon: 'social/medium_filled', title: 'Medium' },
+  { field: 'slack', icon: 'social/slack_filled', title: 'Slack' },
+  { field: 'reddit', icon: 'social/reddit_filled', title: 'Reddit' },
 ];
 
 const PRICE_TICKERS: Array<Omit<ServiceLinkProps, 'href'>> = [
-  { field: 'coinGeckoTicker', icon: 'social\\coingecko', title: 'CoinGecko' },
-  { field: 'coinMarketCapTicker', icon: 'social\\coinmarketcap', title: 'CoinMarketCap' },
-  { field: 'defiLlamaTicker', icon: 'social\\defi_llama', title: 'DefiLlama' },
+  { field: 'coinGeckoTicker', icon: 'social/coingecko', title: 'CoinGecko' },
+  { field: 'coinMarketCapTicker', icon: 'social/coinmarketcap', title: 'CoinMarketCap' },
+  { field: 'defiLlamaTicker', icon: 'social/defi_llama', title: 'DefiLlama' },
 ];
 
 export function hasContent(data: TokenVerifiedInfo): boolean {

@@ -111,7 +111,7 @@ const CongratsStepContent = ({ isReferral, customReferralReward }: Props) => {
         <Skeleton loading={ referralsQuery.isLoading } mt={ 6 }>
           <Button asChild>
             <a href={ `https://x.com/intent/tweet?text=${ encodeURIComponent(shareText) }` } target="_blank">
-              Share on <IconSvg name={ 'social\\twitter' } boxSize={ 6 } ml={ 1 }/>
+              Share on <IconSvg name="social/twitter" boxSize={ 6 } ml={ 1 }/>
             </a>
           </Button>
         </Skeleton>
