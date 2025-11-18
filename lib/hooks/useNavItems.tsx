@@ -85,13 +85,13 @@ export default function useNavItems(): ReturnType {
     const rollupDeposits = {
       text: `Deposits (L1${ rightLineArrow }L2)`,
       nextRoute: { pathname: '/deposits' as const },
-      icon: 'arrows\\south-east',
+      icon: 'arrows/south-east',
       isActive: pathname === '/deposits',
     };
     const rollupWithdrawals = {
       text: `Withdrawals (L2${ rightLineArrow }L1)`,
       nextRoute: { pathname: '/withdrawals' as const },
-      icon: 'arrows\\north-east',
+      icon: 'arrows/north-east',
       isActive: pathname === '/withdrawals',
     };
     const rollupTxnBatches = {
@@ -203,7 +203,7 @@ export default function useNavItems(): ReturnType {
         config.features.beaconChain.isEnabled && {
           text: 'Withdrawals',
           nextRoute: { pathname: '/withdrawals' as const },
-          icon: 'arrows\\north-east',
+          icon: 'arrows/north-east',
           isActive: pathname === '/withdrawals',
         },
       ].filter(Boolean);

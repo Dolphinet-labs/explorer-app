@@ -67,7 +67,7 @@ const Icon = (props: IconProps) => {
 
     const isProxy = Boolean(props.address.implementations?.length);
     const isVerified = isProxy ? props.address.is_verified && props.address.implementations?.every(({ name }) => Boolean(name)) : props.address.is_verified;
-    const contractIconName: EntityBase.IconBaseProps['name'] = props.address.is_verified ? 'contracts\\verified' : 'contracts\\regular';
+    const contractIconName: EntityBase.IconBaseProps['name'] = props.address.is_verified ? 'contracts/verified' : 'contracts/regular';
     const label = (isVerified ? 'verified ' : '') + (isProxy ? 'proxy contract' : 'contract') + (props.hintPostfix ?? '');
 
     return (
