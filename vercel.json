@@ -1,0 +1,6 @@
+{
+  "buildCommand": "bash deploy/scripts/build_for_vercel.sh",
+  "installCommand": "yarn install --frozen-lockfile",
+  "framework": "nextjs"
+}
+
