@@ -12,10 +12,10 @@ interface Props {
 }
 
 const SOCIAL_LINKS: Array<Omit<SocialLinkProps, 'href'>> = [
-  { field: 'github', icon: 'social\\github_filled', title: 'Github' },
-  { field: 'twitter', icon: 'social\\twitter_filled', title: 'X (ex-Twitter)' },
-  { field: 'telegram', icon: 'social\\telegram_filled', title: 'Telegram' },
-  { field: 'discord', icon: 'social\\discord_filled', title: 'Discord' },
+  { field: 'github', icon: 'social/github_filled', title: 'Github' },
+  { field: 'twitter', icon: 'social/twitter_filled', title: 'X (ex-Twitter)' },
+  { field: 'telegram', icon: 'social/telegram_filled', title: 'Telegram' },
+  { field: 'discord', icon: 'social/discord_filled', title: 'Discord' },
 ];
 
 const Content = ({ data }: Props) => {
