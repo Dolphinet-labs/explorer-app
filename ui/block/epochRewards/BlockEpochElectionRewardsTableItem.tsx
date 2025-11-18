@@ -45,7 +45,7 @@ const BlockEpochElectionRewardsTableItem = ({ isLoading, data, type }: Props) =>
                 variant="link"
               >
                 <IconSvg
-                  name={ 'arrows\\east-mini' }
+                  name="arrows/east-mini"
                   boxSize={ 6 }
                   transform={ section.open ? 'rotate(270deg)' : 'rotate(180deg)' }
                   transitionDuration="faster"

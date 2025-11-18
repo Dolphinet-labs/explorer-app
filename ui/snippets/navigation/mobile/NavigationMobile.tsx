@@ -109,7 +109,7 @@ const NavigationMobile = ({ onNavLinkClick, isMarketplaceAppPage }: Props) => {
         transition={ `left ${ ANIMATION_DURATION }ms ease-in-out` }
       >
         <Flex alignItems="center" px={ 2 } py={ 2.5 } w="100%" h="50px" onClick={ onGroupItemClose } mb={ 1 }>
-          <IconSvg name={ 'arrows\\east-mini' } boxSize={ 6 } mr={ 2 } color={ iconColor }/>
+          <IconSvg name="arrows/east-mini" boxSize={ 6 } mr={ 2 } color={ iconColor }/>
           <Text color="text.secondary" fontSize="sm">{ mainNavItems[openedGroupIndex]?.text }</Text>
         </Flex>
         <Box

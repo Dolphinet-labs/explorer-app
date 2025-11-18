@@ -54,7 +54,7 @@ const TokenSelectButton = ({ isOpen, isLoading, data, ...rest }: Props, ref: Rea
         >
           { space }({ prefix }${ usd.toFormat(2) })
         </chakra.span>
-        <IconSvg name={ 'arrows\\east-mini' } transform={ isOpen ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 } ml={ 3 }/>
+        <IconSvg name="arrows/east-mini" transform={ isOpen ? 'rotate(90deg)' : 'rotate(-90deg)' } transitionDuration="faster" boxSize={ 5 } ml={ 3 }/>
       </Button>
       { isLoading && !isOpen && (
         <Skeleton
