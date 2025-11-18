@@ -33,7 +33,7 @@ const TacOperationLifecycleAccordionItemTrigger = ({ status, isFirst, isLast, is
       default: {
         return (
           <HStack gap={ 2 } color={ isSuccess ? 'green.500' : 'red.600' }>
-            <IconSvg name={ isSuccess ? 'verification-steps\\finalized' : 'verification-steps\\error' } boxSize={ 5 } isLoading={ isLoading }/>
+            <IconSvg name={ isSuccess ? 'verification-steps/finalized' : 'verification-steps/error' } boxSize={ 5 } isLoading={ isLoading }/>
             <Skeleton loading={ isLoading }>
               { STATUS_LABELS[status] }
             </Skeleton>
