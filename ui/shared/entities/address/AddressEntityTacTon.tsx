@@ -53,7 +53,7 @@ const AddressEntityTacTon = (props: Props) => {
       href={ href }
       isExternal={ props.chainType === tac.BlockchainType.TON }
       icon={ props.chainType === tac.BlockchainType.TON ? {
-        shield: { name: 'brands\\ton' },
+        shield: { name: 'brands/ton' },
         hint: 'Address on TON',
         hintPostfix: ' on TON',
       } : undefined }

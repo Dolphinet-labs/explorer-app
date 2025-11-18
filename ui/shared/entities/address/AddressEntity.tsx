@@ -60,7 +60,7 @@ const Icon = (props: IconProps) => {
       return (
         <EntityBase.Icon
           { ...props }
-          name={ 'brands\\safe' }
+          name="brands/safe"
         />
       );
     }
