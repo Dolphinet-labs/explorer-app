@@ -34,11 +34,19 @@ else
             cp "$SPRITE_FILE" "public/icons/sprite.svg"
             echo "✅ Created sprite.svg fallback from existing sprite file"
         fi
+        # Extract hash from filename if NEXT_PUBLIC_ICON_SPRITE_HASH is not set
+        if [ -z "$NEXT_PUBLIC_ICON_SPRITE_HASH" ]; then
+            SPRITE_HASH=$(basename "$SPRITE_FILE" | sed 's/sprite\.\(.*\)\.svg/\1/')
+            export NEXT_PUBLIC_ICON_SPRITE_HASH=${SPRITE_HASH}
+            echo "📦 Extracted sprite hash from filename: ${NEXT_PUBLIC_ICON_SPRITE_HASH}"
+        fi
     fi
 fi
 
 # Step 3: Generate envs.js with sprite hash
 echo "📝 Generating envs.js..."
+# Export the sprite hash to ensure it's available in the subprocess
+export NEXT_PUBLIC_ICON_SPRITE_HASH
 bash deploy/scripts/make_envs_script.sh
 
 # Step 4: Build Next.js app
