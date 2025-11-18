@@ -58,7 +58,7 @@ const RewardsInstancesModal = ({ isOpen, onClose, items }: Props) => {
                     flexShrink={ 0 }
                     fallback={ (
                       <IconSvg
-                        name={ 'networks\\icon-placeholder' }
+                        name="networks/icon-placeholder"
                         boxSize={ 5 }
                         color="text.secondary"
                       />
