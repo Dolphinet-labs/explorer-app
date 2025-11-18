@@ -27,7 +27,7 @@ const LogoFallback = ({ isCollapsed, isSmall }: { isCollapsed?: boolean; isSmall
 
   return (
     <IconSvg
-      name={ isSmall ? 'networks\\icon-placeholder' : 'networks\\logo-placeholder' }
+      name={ isSmall ? 'networks/icon-placeholder' : 'networks/logo-placeholder' }
       width={ isSmall ? '30px' : '120px' }
       height="100%"
       color={{ base: 'blue.600', _dark: 'white' }}

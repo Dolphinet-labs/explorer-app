@@ -29,7 +29,7 @@ const SolidityscanReportScore = ({ className, score }: Props) => {
         mr={ 3 }
       >
         <Center position="absolute" w="38px" h="38px" top="5px" right="5px" bg="popover.bg" borderRadius="20px">
-          <IconSvg name={ score < 80 ? 'score\\score-not-ok' : 'score\\score-ok' } boxSize={ 5 } color={ scoreColor }/>
+          <IconSvg name={ score < 80 ? 'score/score-not-ok' : 'score/score-ok' } boxSize={ 5 } color={ scoreColor }/>
         </Center>
       </Box>
       <Box>

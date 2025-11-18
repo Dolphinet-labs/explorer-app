@@ -49,7 +49,7 @@ const SolidityscanReportButton = (
             onFocusCapture={ onFocusCapture }
             { ...rest }
           >
-            <IconSvg name={ score < 80 ? 'score\\score-not-ok' : 'score\\score-ok' } boxSize={ 5 }/>
+            <IconSvg name={ score < 80 ? 'score/score-not-ok' : 'score/score-ok' } boxSize={ 5 }/>
             { isLoading && <Spinner size="sm"/> }
             { !isLoading && (onlyIcon ? null : score) }
           </Button>
