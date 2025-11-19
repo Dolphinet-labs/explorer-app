@@ -127,11 +127,18 @@ download_and_save_asset() {
                 return 1
             fi
         else
-            # Convert single-quoted JSON-like content to valid JSON
-            json_content=$(echo "${!env_var}" | sed "s/'/\"/g")
+            # Check if it's a local static asset path
+            if [[ "$url" == /static/* ]]; then
+                # For local static assets, just use the path directly (don't download)
+                echo "   [+] $env_var: Using local static asset $url"
+                return 0
+            else
+                # Convert single-quoted JSON-like content to valid JSON
+                json_content=$(echo "${!env_var}" | sed "s/'/\"/g")
 
-            # Save the JSON content to a file
-            echo "$json_content" > "$destination"
+                # Save the JSON content to a file
+                echo "$json_content" > "$destination"
+            fi
         fi
     fi
 
