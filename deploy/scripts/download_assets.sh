@@ -132,6 +132,14 @@ download_and_save_asset() {
                 # For local static assets, just use the path directly (don't download)
                 echo "   [+] $env_var: Using local static asset $url"
                 return 0
+            elif [[ "$env_var" == "NEXT_PUBLIC_FOOTER_LINKS" ]] && [[ "$url" == /static/* ]]; then
+                # Special handling for footer links - use local static file
+                echo "   [+] $env_var: Using local static footer links $url"
+                return 0
+            elif [[ "$env_var" == "NEXT_PUBLIC_FEATURED_NETWORKS" ]] && [[ "$url" == /static/* ]]; then
+                # Special handling for featured networks - use local static file
+                echo "   [+] $env_var: Using local static featured networks $url"
+                return 0
             else
                 # Convert single-quoted JSON-like content to valid JSON
                 json_content=$(echo "${!env_var}" | sed "s/'/\"/g")

@@ -4,6 +4,15 @@ set -e
 
 echo "🔨 Starting Vercel build process..."
 
+# Load environment preset
+echo "📋 Loading environment preset: dolphinet-testnet"
+if [ -f "./configs/envs/dolphinet-testnet.env" ]; then
+    source "./configs/envs/dolphinet-testnet.env"
+    echo "✅ Environment preset loaded"
+else
+    echo "⚠️  Warning: Environment preset file not found"
+fi
+
 # Ensure scripts have execute permissions
 chmod +x deploy/scripts/download_assets.sh
 chmod +x deploy/scripts/build_sprite.sh
