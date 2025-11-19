@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Dolphinet",
+    "links": [
+      { "text": "Homepage", "url": "https://dolphinode.world" },
+      { "text": "Docs", "url": "https://docs.dolphinode.world" },
+      { "text": "Bridge", "url": "https://bridge-testnet.dolphinode.world" }
+    ]
+  },
+  {
+    "title": "Community",
+    "links": [
+      { "text": "Discord", "url": "https://discord.gg/dolphinode" },
+      { "text": "Twitter", "url": "https://twitter.com/dolphinode" }
+    ]
+  }
+]
+

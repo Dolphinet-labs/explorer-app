@@ -1,0 +1,10 @@
+[
+  {
+    "title": "Dolphinet Testnet",
+    "url": "https://explorer-testnet.dolphinode.world",
+    "group": "Testnets",
+    "icon": "/static/dolphinet_icon.svg",
+    "isActive": true
+  }
+]
+
