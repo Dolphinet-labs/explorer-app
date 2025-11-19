@@ -4,6 +4,49 @@ set -e
 
 echo "🔨 Starting Vercel build process..."
 
+# Function to load environment variables from preset (similar to entrypoint.sh)
+export_envs_from_preset() {
+  if [ -z "$ENVS_PRESET" ]; then
+      return
+  fi
+
+  if [ "$ENVS_PRESET" = "none" ]; then
+      return
+  fi
+
+  local preset_file="./configs/envs/.env.$ENVS_PRESET"
+
+  if [ ! -f "$preset_file" ]; then
+      # Try alternative format without .env prefix
+      preset_file="./configs/envs/$ENVS_PRESET.env"
+      if [ ! -f "$preset_file" ]; then
+          echo "⚠️  Warning: Preset file not found: $preset_file"
+          return
+      fi
+  fi
+
+  local blacklist=(
+    "NEXT_PUBLIC_APP_PROTOCOL"
+    "NEXT_PUBLIC_APP_HOST"
+    "NEXT_PUBLIC_APP_PORT"
+    "NEXT_PUBLIC_APP_ENV"
+    "NEXT_PUBLIC_API_WEBSOCKET_PROTOCOL"
+  )
+
+  echo "📋 Loading environment preset: $ENVS_PRESET"
+
+  while IFS='=' read -r name value; do
+      name="${name#"${name%%[![:space:]]*}"}"  # Trim leading whitespace
+      if [[ -n $name && $name == "NEXT_PUBLIC_"* && ! "${blacklist[*]}" =~ "$name" ]]; then
+          export "$name"="$value"
+          echo "  ✓ $name"
+      fi
+  done < <(grep "^[^#;]" "$preset_file")
+}
+
+# Load environment variables from preset if ENVS_PRESET is set
+export_envs_from_preset
+
 # Ensure scripts have execute permissions
 chmod +x deploy/scripts/download_assets.sh
 chmod +x deploy/scripts/build_sprite.sh
