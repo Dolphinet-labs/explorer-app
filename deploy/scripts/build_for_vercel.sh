@@ -7,7 +7,16 @@ echo "🔨 Starting Vercel build process..."
 # Load environment preset
 echo "📋 Loading environment preset: dolphinet-testnet"
 if [ -f "./configs/envs/dolphinet-testnet.env" ]; then
-    source "./configs/envs/dolphinet-testnet.env"
+    # Safely export environment variables
+    while IFS= read -r line; do
+        # Skip empty lines and comments
+        [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
+        # Only process NEXT_PUBLIC variables
+        [[ "$line" =~ ^NEXT_PUBLIC_ ]] || continue
+        # Export the variable
+        export "$line"
+        echo "   ✓ ${line%%=*}"
+    done < "./configs/envs/dolphinet-testnet.env"
     echo "✅ Environment preset loaded"
 else
     echo "⚠️  Warning: Environment preset file not found"
