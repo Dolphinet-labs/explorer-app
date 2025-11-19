@@ -8,10 +8,16 @@ output_file="${1:-./public/assets/envs.js}"
 touch $output_file;
 truncate -s 0 $output_file;
 
-# Check if the .env file exists and load ENVs from it
+# Check if the .env file exists and load ENVs from it (only if not already set)
 if [ -f .env ]; then
-    source .env
-    export $(cut -d= -f1 .env)
+    while IFS='=' read -r key value; do
+        # Skip empty lines and comments
+        [[ -z "$key" || "$key" =~ ^[[:space:]]*# ]] && continue
+        # Only set if not already set
+        if [ -z "${!key}" ]; then
+            export "$key=$value"
+        fi
+    done < .env
 fi
 
 echo "window.__envs = {" >> $output_file;
