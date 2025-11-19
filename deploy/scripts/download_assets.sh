@@ -3,6 +3,15 @@
 echo
 echo "⬇️  Downloading external assets..."
 
+# Map of env variables to default assets inside the repository.
+declare -A DEFAULT_ASSETS=(
+    ["NEXT_PUBLIC_NETWORK_LOGO"]="public/static/dolphinet-logo.png"
+    ["NEXT_PUBLIC_NETWORK_LOGO_DARK"]="public/static/dolphinet-logo.png"
+    ["NEXT_PUBLIC_NETWORK_ICON"]="public/static/dolphinet-icon.png"
+    ["NEXT_PUBLIC_NETWORK_ICON_DARK"]="public/static/dolphinet-icon.png"
+    ["NEXT_PUBLIC_OG_IMAGE_URL"]="public/static/og_placeholder.png"
+)
+
 # Check if the number of arguments provided is correct
 if [ "$#" -ne 1 ]; then
   echo "🛑 Error: incorrect amount of arguments. Usage: $0 <ASSETS_DIR>."
@@ -27,6 +36,25 @@ ASSETS_ENVS=(
     "NEXT_PUBLIC_NETWORK_ICON_DARK"
     "NEXT_PUBLIC_OG_IMAGE_URL"
 )
+
+use_default_asset() {
+    local env_var="$1"
+    local destination="$2"
+    local default_asset="${DEFAULT_ASSETS[$env_var]}"
+
+    if [ -z "$default_asset" ]; then
+        return 1
+    fi
+
+    if [ ! -f "$default_asset" ]; then
+        return 1
+    fi
+
+    mkdir -p "$(dirname "$destination")"
+    cp "$default_asset" "$destination"
+    echo "   [+] $env_var: Using default asset $default_asset"
+    return 0
+}
 
 # Create the assets directory if it doesn't exist
 mkdir -p "$ASSETS_DIR"
@@ -76,6 +104,9 @@ download_and_save_asset() {
 
     # Check if the environment variable is set
     if [ -z "${!env_var}" ]; then
+        if use_default_asset "$env_var" "$destination"; then
+            return 0
+        fi
         echo "   [.] $env_var: Variable is not set. Skipping download."
         return 1
     fi
@@ -90,6 +121,9 @@ download_and_save_asset() {
             # Download the asset using curl with timeouts
             if ! curl -f -s --connect-timeout 5 --max-time 15 -o "$destination" "$url"; then
                 echo "   [-] $env_var: Failed to download from $url (timeout or connection error)"
+                if use_default_asset "$env_var" "$destination"; then
+                    return 0
+                fi
                 return 1
             fi
         else
@@ -111,10 +145,13 @@ download_and_save_asset() {
     if [ $? -eq 0 ]; then
         echo "   [+] $env_var: Successfully saved file from $source_name to $destination."
         return 0
-    else
-        echo "   [-] $env_var: Failed to save file from $source_name."
-        return 1
     fi
+
+    echo "   [-] $env_var: Failed to save file from $source_name."
+    if use_default_asset "$env_var" "$destination"; then
+        return 0
+    fi
+    return 1
 }
 
 # Iterate through the list and download assets
