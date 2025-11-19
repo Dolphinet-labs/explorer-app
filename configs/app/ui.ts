@@ -11,6 +11,10 @@ import * as features from './features';
 import * as views from './ui/views';
 import { getEnvValue, getExternalAssetFilePath, parseEnvJson } from './utils';
 
+const getAssetWithFallback = (envName: string, fallback?: string) => {
+  return getExternalAssetFilePath(envName) || fallback;
+};
+
 const hiddenLinks = (() => {
   const parsedValue = parseEnvJson<Array<NavigationLinkId>>(getEnvValue('NEXT_PUBLIC_NAVIGATION_HIDDEN_LINKS')) || [];
 
@@ -55,12 +59,12 @@ const defaultColorTheme = (() => {
 const UI = Object.freeze({
   navigation: {
     logo: {
-      'default': getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_LOGO'),
-      dark: getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_LOGO_DARK'),
+      'default': getAssetWithFallback('NEXT_PUBLIC_NETWORK_LOGO', '/static/logo.png'),
+      dark: getAssetWithFallback('NEXT_PUBLIC_NETWORK_LOGO_DARK', '/static/logo-dark.png'),
     },
     icon: {
-      'default': getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_ICON'),
-      dark: getExternalAssetFilePath('NEXT_PUBLIC_NETWORK_ICON_DARK'),
+      'default': getAssetWithFallback('NEXT_PUBLIC_NETWORK_ICON', '/static/noword.png'),
+      dark: getAssetWithFallback('NEXT_PUBLIC_NETWORK_ICON_DARK', '/static/noword-dark.png'),
     },
     hiddenLinks,
     highlightedRoutes,

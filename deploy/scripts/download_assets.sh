@@ -5,10 +5,10 @@ echo "⬇️  Downloading external assets..."
 
 # Map of env variables to default assets inside the repository.
 declare -A DEFAULT_ASSETS=(
-    ["NEXT_PUBLIC_NETWORK_LOGO"]="public/static/dolphinet-logo.png"
-    ["NEXT_PUBLIC_NETWORK_LOGO_DARK"]="public/static/dolphinet-logo.png"
-    ["NEXT_PUBLIC_NETWORK_ICON"]="public/static/dolphinet-icon.png"
-    ["NEXT_PUBLIC_NETWORK_ICON_DARK"]="public/static/dolphinet-icon.png"
+    ["NEXT_PUBLIC_NETWORK_LOGO"]="public/static/logo.png"
+    ["NEXT_PUBLIC_NETWORK_LOGO_DARK"]="public/static/logo-dark.png"
+    ["NEXT_PUBLIC_NETWORK_ICON"]="public/static/noword.png"
+    ["NEXT_PUBLIC_NETWORK_ICON_DARK"]="public/static/noword-dark.png"
     ["NEXT_PUBLIC_OG_IMAGE_URL"]="public/static/og_placeholder.png"
 )
 
