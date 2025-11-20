@@ -11,11 +11,11 @@ if [ -f "./configs/envs/dolphinet-testnet.env" ]; then
     while IFS= read -r line; do
         # Skip empty lines and comments
         [[ -z "$line" || "$line" =~ ^[[:space:]]*# ]] && continue
-        # Only process NEXT_PUBLIC variables
-        [[ "$line" =~ ^NEXT_PUBLIC_ ]] || continue
         # Export the variable
         export "$line"
-        echo "   ✓ ${line%%=*}"
+        if [[ "$line" =~ ^NEXT_PUBLIC_ ]]; then
+            echo "   ✓ ${line%%=*}"
+        fi
     done < "./configs/envs/dolphinet-testnet.env"
     echo "✅ Environment preset loaded"
 else

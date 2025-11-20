@@ -29,46 +29,28 @@ const Home = () => {
 
   return (
     <Box as="main">
-      { /* Hero Section */ }
-      <Box mb={{ base: 8, lg: 12 }}>
-        <HeroBanner/>
-      </Box>
-
-      { /* Stats Section */ }
-      <Box mb={{ base: 8, lg: 12 }}>
-        <Flex
-          flexDir={{ base: 'column', lg: 'row' }}
-          columnGap={{ base: 4, lg: 6 }}
-          rowGap={{ base: 4, lg: 0 }}
-          alignItems={{ base: 'stretch', lg: 'flex-start' }}
-        >
-          <Box flex={{ base: '1', lg: '0 0 320px' }}>
-            <Stats/>
-          </Box>
-          <Box flex={{ base: '1', lg: '0 0 280px' }}>
-            <ChainIndicators/>
-          </Box>
-        </Flex>
-      </Box>
-
-      { /* Main Content Section */ }
+      <HeroBanner/>
       <Flex
+        flexDir={{ base: 'column', lg: 'row' }}
+        columnGap={{ base: 2, lg: 4 }}
+        rowGap={{ base: 3, lg: 0 }}
+        mt={{ base: 4, lg: 6 }}
+        _empty={{ mt: 0 }}
+      >
+        <Stats/>
+        <ChainIndicators/>
+      </Flex>
+      <Flex
+        mt={{ base: 6, lg: 8 }}
         direction={{ base: 'column', lg: 'row' }}
         columnGap={{ base: 0, lg: 8 }}
-        rowGap={{ base: 8, lg: 0 }}
+        rowGap={{ base: 6, lg: 0 }}
         alignItems="flex-start"
       >
-        <Box
-          flex={{ base: '1', lg: '0 0 420px' }}
-          order={{ base: 2, lg: 1 }}
-        >
+        <Box flex={{ base: '1', lg: '0 0 400px' }}>
           { leftWidget }
         </Box>
-        <Box
-          flexGrow={ 1 }
-          minW={ 0 }
-          order={{ base: 1, lg: 2 }}
-        >
+        <Box flexGrow={ 1 } minW={ 0 }>
           <Transactions/>
         </Box>
       </Flex>

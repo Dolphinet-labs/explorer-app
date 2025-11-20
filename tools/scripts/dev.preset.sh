@@ -6,7 +6,7 @@ if [ "$#" -ne 1 ]; then
 fi
 
 preset_name="$1"
-config_file="./configs/envs/.env.${preset_name}"
+config_file="./configs/envs/${preset_name}.env"
 secrets_file="./configs/envs/.env.secrets"
 
 if [ ! -f "$config_file" ]; then
