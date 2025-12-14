@@ -4,6 +4,7 @@ import { throttle } from 'es-toolkit';
 import React from 'react';
 import type { ChangeEvent, FormEvent, FocusEvent } from 'react';
 
+import { useScrollDirection } from 'lib/contexts/scrollDirection';
 import useIsMobile from 'lib/hooks/useIsMobile';
 import { Input } from 'toolkit/chakra/input';
 import { InputGroup } from 'toolkit/chakra/input-group';
@@ -28,6 +29,7 @@ const SearchBarInput = (
   const innerRef = React.useRef<HTMLFormElement>(null);
   React.useImperativeHandle(ref, () => innerRef.current as HTMLFormElement, []);
   const [ isSticky, setIsSticky ] = React.useState(false);
+  const scrollDirection = useScrollDirection();
   const isMobile = useIsMobile();
 
   const handleScroll = React.useCallback(() => {
@@ -97,6 +99,8 @@ const SearchBarInput = (
     };
   }, [ handleKeyPress ]);
 
+  const transformMobile = scrollDirection !== 'down' ? 'translateY(0)' : 'translateY(-100%)';
+
   const startElement = (
     <IconSvg
       name="search"
@@ -132,14 +136,16 @@ const SearchBarInput = (
       w="100%"
       backgroundColor={{ _light: 'white', _dark: 'black' }}
       borderRadius={{ base: isHomepage ? 'base' : 'none', lg: 'base' }}
-      position={{ base: isHomepage ? 'static' : 'sticky', lg: 'relative' }}
-      top={{ base: isHomepage ? 0 : 0, lg: 0 }}
+      position={{ base: isHomepage ? 'static' : 'fixed', lg: 'relative' }}
+      top={{ base: isHomepage ? 0 : 48, lg: 0 }}
+      left="0"
+      right="0"
       zIndex={{ base: isHomepage ? 'auto' : 'sticky2', lg: isSuggestOpen ? 'modal' : 'auto' }}
       paddingX={{ base: isHomepage ? 0 : 3, lg: 0 }}
       paddingTop={{ base: isHomepage ? 0 : 1, lg: 0 }}
       paddingBottom={{ base: isHomepage ? 0 : 2, lg: 0 }}
       boxShadow={ isSticky ? 'md' : 'none' }
-      transform={{ base: 'none', lg: 'none' }}
+      transform={{ base: isHomepage ? 'none' : transformMobile, lg: 'none' }}
       transitionProperty="transform,box-shadow,background-color,color,border-color"
       transitionDuration="normal"
       transitionTimingFunction="ease"
