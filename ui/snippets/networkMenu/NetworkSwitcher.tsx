@@ -2,44 +2,44 @@ import { Box, Text } from '@chakra-ui/react';
 import React from 'react';
 
 import config from 'configs/app';
-import { Button } from 'toolkit/chakra/button';
+import { Button, ButtonGroupRadio } from 'toolkit/chakra/button';
 
 const TESTNET_URL = 'https://explorer-testnet.dolphinode.world/';
 const MAINNET_URL = 'https://explorer.dolphinode.world/';
 
-const NetworkSwitcher: React.FC = () => {
-  const isTestnet = config.chain.isTestnet;
-  const currentNetwork = isTestnet ? 'Testnet' : 'Mainnet';
-  const targetUrl = isTestnet ? MAINNET_URL : TESTNET_URL;
+type NetworkKey = 'testnet' | 'mainnet';
 
-  const handleSwitch = React.useCallback(() => {
+const NetworkSwitcher: React.FC = () => {
+  const current: NetworkKey = config.chain.isTestnet ? 'testnet' : 'mainnet';
+
+  const handleChange = React.useCallback((next: string) => {
+    const nextNetwork = next as NetworkKey;
+    if (nextNetwork === current) {
+      return;
+    }
+
+    const targetUrl = nextNetwork === 'testnet' ? TESTNET_URL : MAINNET_URL;
     window.location.href = targetUrl;
-  }, [ targetUrl ]);
+  }, [ current ]);
 
   return (
-    <Button
+    <ButtonGroupRadio
+      defaultValue={ current }
+      onChange={ handleChange }
+      equalWidth
       size="sm"
-      variant="outline"
-      colorScheme="blue"
-      borderRadius="md"
-      px={ 3 }
-      py={ 2 }
-      fontSize="sm"
-      fontWeight="medium"
-      display="flex"
-      alignItems="center"
-      gap={ 2 }
-      onClick={ handleSwitch }
+      w="fit-content"
     >
-      <Box
-        w={ 2 }
-        h={ 2 }
-        borderRadius="full"
-        bg={ isTestnet ? 'orange.400' : 'green.400' }
-      />
-      <Text>{ currentNetwork }</Text>
-    </Button>
+      <Button value="testnet" px={ 3 }>
+        <Box w={ 2 } h={ 2 } borderRadius="full" bg="orange.400"/>
+        <Text>Testnet</Text>
+      </Button>
+      <Button value="mainnet" px={ 3 }>
+        <Box w={ 2 } h={ 2 } borderRadius="full" bg="green.400"/>
+        <Text>Mainnet</Text>
+      </Button>
+    </ButtonGroupRadio>
   );
 };
 
-export default NetworkSwitcher;
+export default React.memo(NetworkSwitcher);
