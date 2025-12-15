@@ -3,6 +3,7 @@ import React from 'react';
 
 import config from 'configs/app';
 import RewardsButton from 'ui/rewards/RewardsButton';
+import NetworkSwitcher from 'ui/snippets/networkMenu/NetworkSwitcher';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileDesktop from 'ui/snippets/user/profile/UserProfileDesktop';
 import UserWalletDesktop from 'ui/snippets/user/wallet/UserWalletDesktop';
@@ -27,6 +28,7 @@ const HeaderDesktop = ({ renderSearchBar }: Props) => {
       <Box width="100%">
         { searchBar }
       </Box>
+      <NetworkSwitcher/>
       { config.UI.navigation.layout === 'vertical' && (
         <Box display="flex" gap={ 2 } flexShrink={ 0 }>
           { config.features.rewards.isEnabled && <RewardsButton/> }
