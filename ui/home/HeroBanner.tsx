@@ -74,7 +74,7 @@ const HeroBanner = () => {
             }
           </Heading>
           <Flex gap={ 2 } alignItems="center">
-            <NetworkSwitcher/>
+            <NetworkSwitcher variant="hero"/>
             { config.UI.navigation.layout === 'vertical' && (
               <Box display={{ base: 'none', lg: 'flex' }} gap={ 2 }>
                 { config.features.rewards.isEnabled && <RewardsButton variant="hero"/> }

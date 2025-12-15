@@ -9,7 +9,16 @@ const MAINNET_URL = 'https://explorer.dolphinode.world/';
 
 type NetworkKey = 'testnet' | 'mainnet';
 
-const NetworkSwitcher: React.FC = () => {
+type Props = {
+
+  /**
+   * `hero` is meant for dark/colored backgrounds (homepage hero banner).
+   * `header` is meant for default light header background.
+   */
+  variant?: 'header' | 'hero';
+};
+
+const NetworkSwitcher: React.FC<Props> = ({ variant = 'header' }) => {
   const current: NetworkKey = config.chain.isTestnet ? 'testnet' : 'mainnet';
 
   const handleChange = React.useCallback((next: string) => {
@@ -22,6 +31,8 @@ const NetworkSwitcher: React.FC = () => {
     window.location.href = targetUrl;
   }, [ current ]);
 
+  const isHero = variant === 'hero';
+
   return (
     <ButtonGroupRadio
       defaultValue={ current }
@@ -29,14 +40,31 @@ const NetworkSwitcher: React.FC = () => {
       equalWidth
       size="sm"
       w="fit-content"
+      borderRadius="md"
+      backgroundColor={ isHero ? 'whiteAlpha.200' : undefined }
+      borderWidth={ isHero ? '1px' : undefined }
+      borderColor={ isHero ? 'whiteAlpha.400' : undefined }
+      overflow="hidden"
     >
-      <Button value="testnet" px={ 3 }>
+      <Button
+        value="testnet"
+        px={ 3 }
+        color={ isHero ? 'white' : undefined }
+        _hover={ isHero ? { backgroundColor: 'whiteAlpha.250' } : undefined }
+        sx={ isHero ? { '&[data-selected]': { backgroundColor: 'whiteAlpha.300' } } : undefined }
+      >
         <Box w={ 2 } h={ 2 } borderRadius="full" bg="orange.400"/>
-        <Text>Testnet</Text>
+        <Text color="inherit">Testnet</Text>
       </Button>
-      <Button value="mainnet" px={ 3 }>
+      <Button
+        value="mainnet"
+        px={ 3 }
+        color={ isHero ? 'white' : undefined }
+        _hover={ isHero ? { backgroundColor: 'whiteAlpha.250' } : undefined }
+        sx={ isHero ? { '&[data-selected]': { backgroundColor: 'whiteAlpha.300' } } : undefined }
+      >
         <Box w={ 2 } h={ 2 } borderRadius="full" bg="green.400"/>
-        <Text>Mainnet</Text>
+        <Text color="inherit">Mainnet</Text>
       </Button>
     </ButtonGroupRadio>
   );
