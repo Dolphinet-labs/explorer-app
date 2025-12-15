@@ -5,6 +5,7 @@ import React from 'react';
 
 import config from 'configs/app';
 import RewardsButton from 'ui/rewards/RewardsButton';
+import NetworkSwitcher from 'ui/snippets/networkMenu/NetworkSwitcher';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileDesktop from 'ui/snippets/user/profile/UserProfileDesktop';
 import UserWalletDesktop from 'ui/snippets/user/wallet/UserWalletDesktop';
@@ -72,15 +73,18 @@ const HeroBanner = () => {
                 `${ config.chain.name } explorer`
             }
           </Heading>
-          { config.UI.navigation.layout === 'vertical' && (
-            <Box display={{ base: 'none', lg: 'flex' }} gap={ 2 }>
-              { config.features.rewards.isEnabled && <RewardsButton variant="hero"/> }
-              {
-                (config.features.account.isEnabled && <UserProfileDesktop buttonVariant="hero"/>) ||
-                (config.features.blockchainInteraction.isEnabled && <UserWalletDesktop buttonVariant="hero"/>)
-              }
-            </Box>
-          ) }
+          <Flex gap={ 2 } alignItems="center">
+            <NetworkSwitcher/>
+            { config.UI.navigation.layout === 'vertical' && (
+              <Box display={{ base: 'none', lg: 'flex' }} gap={ 2 }>
+                { config.features.rewards.isEnabled && <RewardsButton variant="hero"/> }
+                {
+                  (config.features.account.isEnabled && <UserProfileDesktop buttonVariant="hero"/>) ||
+                  (config.features.blockchainInteraction.isEnabled && <UserWalletDesktop buttonVariant="hero"/>)
+                }
+              </Box>
+            ) }
+          </Flex>
         </Flex>
         <SearchBar isHomepage/>
       </Box>

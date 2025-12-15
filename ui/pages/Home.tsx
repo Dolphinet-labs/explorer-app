@@ -13,7 +13,6 @@ import Transactions from 'ui/home/Transactions';
 const rollupFeature = config.features.rollup;
 
 const Home = () => {
-
   const leftWidget = (() => {
     if (rollupFeature.isEnabled && !rollupFeature.homepage.showLatestBlocks) {
       switch (rollupFeature.type) {
