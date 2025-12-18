@@ -28,12 +28,13 @@ const NativeTokenIcon = ({ isLoading, className, type }: Props) => {
   }
 
   const src = type === 'secondary' ? statsQueryResult.data?.secondary_coin_image : statsQueryResult.data?.coin_image;
+  const fallbackSrc = type === 'secondary' ? undefined : '/static/dol-256.png';
 
   return (
     <Image
       className={ className }
       borderRadius="base"
-      src={ src || undefined }
+      src={ src || fallbackSrc }
       alt={ `${ config.chain.currency.symbol } logo` }
       fallback={ <TokenLogoPlaceholder borderRadius="base" className={ className }/> }
     />
