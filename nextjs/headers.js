@@ -22,7 +22,9 @@ async function headers() {
         },
         {
           key: 'Cross-Origin-Opener-Policy',
-          value: 'same-origin',
+          // Required for Coinbase Smart Wallet / Wallet SDK popup communication:
+          // https://www.smartwallet.dev/guides/tips/popup-tips#cross-origin-opener-policy
+          value: 'same-origin-allow-popups',
         },
         {
           key: 'Referrer-Policy',

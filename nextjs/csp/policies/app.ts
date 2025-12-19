@@ -69,6 +69,9 @@ export function app(): CspDev.DirectiveDescriptor {
 
       // hash of ColorModeScript: system + dark
       '\'sha256-yYJq8IP5/WhJj6zxyTmujEqBFs/MufRufp2QKJFU76M=\'',
+      // hash of ColorModeScript (updated Chakra/ColorModeScript output)
+      // see pages/_document.tsx and CSP error suggesting this exact hash
+      '\'sha256-/ZmmXHg9XaKeWp0VJihBDn4cJ7lLM1jUtpgqdgVFvmA=\'',
 
       // CapybaraRunner
       '\'sha256-5+YTmTcBwCYdJ8Jetbr6kyjGp0Ry/H7ptpoun6CrSwQ=\'',
