@@ -6,7 +6,6 @@ import RewardsButton from 'ui/rewards/RewardsButton';
 import NetworkSwitcher from 'ui/snippets/networkMenu/NetworkSwitcher';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileDesktop from 'ui/snippets/user/profile/UserProfileDesktop';
-import UserWalletDesktop from 'ui/snippets/user/wallet/UserWalletDesktop';
 
 type Props = {
   renderSearchBar?: () => React.ReactNode;
@@ -33,8 +32,7 @@ const HeaderDesktop = ({ renderSearchBar }: Props) => {
         <Box display="flex" gap={ 2 } flexShrink={ 0 }>
           { config.features.rewards.isEnabled && <RewardsButton/> }
           {
-            (config.features.account.isEnabled && <UserProfileDesktop/>) ||
-            (config.features.blockchainInteraction.isEnabled && <UserWalletDesktop/>)
+            config.features.account.isEnabled && <UserProfileDesktop/>
           }
         </Box>
       ) }

@@ -7,7 +7,6 @@ import RewardsButton from 'ui/rewards/RewardsButton';
 import { CONTENT_MAX_WIDTH } from 'ui/shared/layout/utils';
 import NetworkLogo from 'ui/snippets/networkMenu/NetworkLogo';
 import UserProfileDesktop from 'ui/snippets/user/profile/UserProfileDesktop';
-import UserWalletDesktop from 'ui/snippets/user/wallet/UserWalletDesktop';
 
 import RollupStageBadge from '../RollupStageBadge';
 import TestnetBadge from '../TestnetBadge';
@@ -30,7 +29,7 @@ const NavigationDesktop = () => {
         <NetworkLogo isCollapsed={ false } w={{ lg: '100%' }} maxW="900px"/>
         <TestnetBadge ml={ 3 }/>
         <RollupStageBadge ml={ 3 }/>
-        <chakra.nav ml="auto" mr={ config.features.account.isEnabled || config.features.blockchainInteraction.isEnabled ? 8 : 0 }>
+        <chakra.nav ml="auto" mr={ config.features.account.isEnabled ? 8 : 0 }>
           <Flex as="ul" columnGap={ 3 }>
             { mainNavItems.map((item) => {
               if (isGroupItem(item)) {
@@ -44,8 +43,7 @@ const NavigationDesktop = () => {
         <Flex gap={ 2 }>
           { config.features.rewards.isEnabled && <RewardsButton size="sm"/> }
           {
-            (config.features.account.isEnabled && <UserProfileDesktop buttonSize="sm"/>) ||
-            (config.features.blockchainInteraction.isEnabled && <UserWalletDesktop buttonSize="sm"/>)
+            config.features.account.isEnabled && <UserProfileDesktop buttonSize="sm"/>
           }
         </Flex>
       </Flex>

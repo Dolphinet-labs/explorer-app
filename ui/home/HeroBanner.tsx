@@ -8,7 +8,6 @@ import RewardsButton from 'ui/rewards/RewardsButton';
 import NetworkSwitcher from 'ui/snippets/networkMenu/NetworkSwitcher';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileDesktop from 'ui/snippets/user/profile/UserProfileDesktop';
-import UserWalletDesktop from 'ui/snippets/user/wallet/UserWalletDesktop';
 
 export const BACKGROUND_DEFAULT =
   'radial-gradient(103.03% 103.03% at 0% 0%, rgba(30, 58, 138, 0.9) 0%, rgba(37, 99, 235, 0.9) 100%), #1E3A8A';
@@ -79,8 +78,7 @@ const HeroBanner = () => {
               <Box display={{ base: 'none', lg: 'flex' }} gap={ 2 }>
                 { config.features.rewards.isEnabled && <RewardsButton variant="hero"/> }
                 {
-                  (config.features.account.isEnabled && <UserProfileDesktop buttonVariant="hero"/>) ||
-                  (config.features.blockchainInteraction.isEnabled && <UserWalletDesktop buttonVariant="hero"/>)
+                  config.features.account.isEnabled && <UserProfileDesktop buttonVariant="hero"/>
                 }
               </Box>
             ) }

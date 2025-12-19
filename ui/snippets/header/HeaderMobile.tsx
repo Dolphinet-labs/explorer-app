@@ -7,7 +7,6 @@ import { useScrollDirection } from 'lib/contexts/scrollDirection';
 import RewardsButton from 'ui/rewards/RewardsButton';
 import SearchBar from 'ui/snippets/searchBar/SearchBar';
 import UserProfileMobile from 'ui/snippets/user/profile/UserProfileMobile';
-import UserWalletMobile from 'ui/snippets/user/wallet/UserWalletMobile';
 
 import Burger from './Burger';
 
@@ -50,7 +49,6 @@ const HeaderMobile = ({ hideSearchBar, renderSearchBar }: Props) => {
           { config.features.rewards.isEnabled && <RewardsButton/> }
           {
             (config.features.account.isEnabled && <UserProfileMobile/>) ||
-            (config.features.blockchainInteraction.isEnabled && <UserWalletMobile/>) ||
             <Box boxSize={ 10 }/>
           }
         </Flex>
